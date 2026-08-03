@@ -1,204 +1,354 @@
-/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+@import "tailwindcss";
 
-/* -------------------------
-   Global / Base
-------------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 html,
-body {
-  height: 100%;
-  width: 100%;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #050505;
-  color: #f5f5f7;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-/* Make sure the root app container doesn't break layout */
+body,
 #root {
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: 'Iceland', cursive;
 }
 
-/* -------------------------
-   Portfolio Section
-------------------------- */
-.MyPortfolio {
+body {
+  background: #0a0a0c;
+}
+
+.App {
+  position: relative;
   width: 100%;
   min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
+  background: #0a0a0c;
+  color: #fff;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
-/* -------------------------
-   ScrollExpandMedia (Hero)
-------------------------- */
-
-/* Main wrapper from Hero.jsx */
-.transition-colors {
-  transition: background-color 0.7s ease-in-out, color 0.7s ease-in-out;
+/* Loader wrapper: invisible box, visible child */
+.App-Loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: none;
+  overflow: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-/* Ensure the hero section stays full viewport height on all devices */
-.min-h-\[100dvh\] {
-  min-height: 100dvh;
+/* Keep the actual loader visible */
+.App-Loader > * {
+  display: block;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
-/* Background image container */
-.absolute.inset-0.z-0.h-full img {
-  /* Next/Image already sets dimensions; this ensures it behaves nicely */
+/* Do NOT destroy the loader visuals inside */
+.App-Loader * {
+  box-sizing: border-box;
+}
+
+/* Hide loader after completion */
+.App-Loader.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Background fixed and clipped */
+.App-Background {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: #0a0a0c;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.App-Background canvas,
+.App-Background img,
+.App-Background svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
-/* Media container (image/video/iframe) */
-.absolute.z-0.top-1\/2.left-1\/2.transform {
-  will-change: width, height;
-  /* Smooth size changes during scroll */
-  transition: width 0.1s linear, height 0.1s linear;
+/* Reveal the Silk background only after the loader finishes */
+.App-Loader.loaded ~ .App-Background {
+  opacity: 1;
+  visibility: visible;
 }
 
-/* Rounded media box */
-.rounded-2xl,
-.rounded-xl {
-  border-radius: 1rem;
+/* Content: plain free text, no box */
+.Content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100vh;
+  background: transparent;
+  overflow: visible;
+  margin: 0;
+  padding: 0;
 }
 
-/* Media shadow */
-.absolute.z-0.top-1\/2.left-1\/2.transform {
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.35);
+.App-content {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.55s ease 0.2s, transform 0.55s ease 0.2s;
 }
 
-/* Improve video/iframe behavior inside the media box */
-.pointer-events-none iframe,
-.pointer-events-none video,
-.pointer-events-none img {
-  user-select: none;
-  -webkit-user-select: none;
+.App-Loader.loaded ~ .Content .App-content {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Overlay gradients on media */
-.absolute.inset-0.bg-black\/30,
-.absolute.inset-0.bg-black\/50 {
-  pointer-events: none;
-  border-radius: 1rem;
+/* Left-aligned wrapper for the TextType */
+.Intro-content {
+  position: absolute;
+  top: 120px;
+  left: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  width: auto;
+  max-width: calc(100% - 64px);
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  text-align: left;
 }
 
-/* Text inside the media box (date + scroll hint) */
-.flex.flex-col.items-center.text-center.relative.z-10.mt-4 {
-  user-select: none;
+/* TextType (left side) */
+.text-type {
+  display: inline-block;
+  font-family: 'Iceland', cursive;
+  color: #fff;
+  font-size: clamp(2.2rem, 5.6vw, 3.6rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  margin: 0;
+  padding: 0;
 }
 
-/* Date and scroll hint text */
-.text-2xl.text-blue-200,
-.text-blue-200.font-medium {
-  color: #bfdbfe; /* tailwind blue-200 fallback if tailwind not fully loaded */
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
-  will-change: transform;
-  transform: translateZ(0); /* GPU hint */
+.text-type__content {
+  display: inline;
+  color: inherit;
+  background: transparent !important;
 }
 
-/* Title text (split into firstWord + restOfTitle) */
-.text-4xl,
-.md\:text-5xl,
-.lg\:text-6xl {
-  will-change: transform;
-  transform: translateZ(0);
-  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.7);
+.text-type__cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: #fff;
+  font-weight: 500;
+  background: transparent !important;
+  border: none !important;
 }
 
-/* Blend mode variant */
-.mix-blend-difference {
-  mix-blend-mode: difference;
+.text-type__cursor--hidden {
+  display: none;
 }
 
-.mix-blend-normal {
-  mix-blend-mode: normal;
+/* RotatingText (sits below TextType with a 20px gap) */
+.Intro-about {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  flex-wrap: wrap;
+  min-height: 1.6em;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  gap: 10px;
 }
 
-/* Content section below hero (children) */
-.flex.flex-col.w-full.px-8.py-10,
-.md\:px-16,
-.lg\:py-20 {
-  /* Ensure smooth fade-in */
-  will-change: opacity;
+.Intro-about__prefix {
+  display: inline-block;
+  font-family: 'Iceland', cursive;
+  color: #fff;
+  font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  white-space: nowrap;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  margin: 0;
+  padding: 0;
 }
 
-/* -------------------------
-   Animations & Utilities
-------------------------- */
-
-/* Optional: subtle floating animation for the scroll hint (if you want extra polish) */
-@keyframes floatHint {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(6px);
-  }
+.rotating-tag {
+  display: inline-flex !important;
+  align-items: baseline;
+  font-family: 'Iceland', cursive;
+  color: #fff;
+  font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  text-align: left;
 }
 
-/* If you decide to add a dedicated class for the scroll hint later, you can use:
-.scroll-hint-float {
-  animation: floatHint 2s ease-in-out infinite;
-}
-*/
-
-/* Prevent horizontal scroll due to wide transforms */
-body {
-  overflow-x: hidden;
+.rotating-tag .text-rotate-element {
+  display: inline-block;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-/* Ensure images from Next/Image don't cause overflow */
-img {
-  max-width: 100%;
-  height: auto;
+.rotating-tag .text-rotate-space {
+  white-space: pre;
 }
 
-/* -------------------------
-   Responsive Tweaks
-------------------------- */
-
-@media (max-width: 768px) {
-  .text-4xl {
-    font-size: 2rem; /* ~text-3xl */
-  }
-
-  .md\:text-5xl {
-    font-size: 2.25rem; /* ~text-4xl */
-  }
-
-  .lg\:text-6xl {
-    font-size: 2.5rem; /* ~text-5xl */
-  }
-
-  /* Slightly softer shadows on mobile for performance */
-  .absolute.z-0.top-1\/2.left-1\/2.transform {
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.35);
-  }
+.rotating-tag-word {
+  overflow: hidden;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-/* -------------------------
-   Optional: Global Link/Button Styles
-   (useful if you add buttons inside children)
-------------------------- */
+.App-content h1,
+.App-content h2,
+.App-content h3,
+.App-content h4,
+.App-content h5,
+.App-content h6,
+.App-content p,
+.App-content span,
+.App-content a,
+.App-content div {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
 
-a {
-  color: #93c5fd; /* blue-300-ish */
+.App-content h2 {
+  font-size: clamp(1.4rem, 3.8vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.App-content p {
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  color: #d6d6d8;
+  margin-top: 0.75rem;
+  line-height: 1.6;
+}
+
+.App-content a {
+  color: #fff;
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 
-a:hover {
-  color: #bfdbfe; /* blue-200 */
+.App-content a:hover {
+  color: #d6d6d8;
 }
 
-button {
-  cursor: pointer;
-  font-family: inherit;
+/* Remove focus-box feel */
+:focus,
+:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .Intro-content {
+    top: 64px;
+    left: 16px;
+    max-width: calc(100% - 32px);
+    gap: 16px;
+  }
+
+  .text-type {
+    font-size: 2.2rem;
+  }
+
+  .App-content h2 {
+    font-size: 1.6rem;
+  }
 }
