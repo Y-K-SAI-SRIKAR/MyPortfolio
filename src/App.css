@@ -166,7 +166,8 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 20px;
-  width: auto;
+  /* Size to the longest TextType line so layout doesn't shift as text types */
+  width: max-content;
   max-width: calc(100% - 64px);
   background: transparent !important;
   border: none !important;
@@ -178,7 +179,7 @@ body {
   text-align: left;
 }
 
-/* TextType (left side) */
+/* TextType (left side) — single line, no wrapping */
 .text-type {
   display: inline-block;
   font-family: 'Iceland', cursive;
@@ -187,8 +188,7 @@ body {
   font-weight: 500;
   letter-spacing: 0.01em;
   line-height: 1.1;
-  white-space: pre-wrap;
-  word-break: break-word;
+  white-space: nowrap;
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -287,6 +287,82 @@ body {
   box-shadow: none !important;
 }
 
+/* Intro-logo-block (3D SVG sits below Intro-about, left aligned, free placement) */
+.Intro-content > .Intro-logo-block {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 20px;
+  width: 480px;
+  height: 480px;
+  pointer-events: auto;
+  overflow: visible;
+  z-index: 2;
+}
+
+.Intro-logo-block > * {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: visible;
+}
+
+.Intro-logo-block canvas,
+.Intro-logo-block svg {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: visible;
+}
+
+/* Intro-terminal (sits beside the 3D logo, right-aligned)
+   Fixed to the viewport (NOT the flex column) so TextType typing/deleting
+   does not drag it around. */
+.Intro-content > .Intro-terminal {
+  position: fixed !important;
+  top: 320px !important;
+  right: 120px !important;
+  bottom: auto !important;
+  left: auto !important;
+  margin: 0 !important;
+  width: auto;
+  pointer-events: auto;
+  overflow: visible;
+  z-index: 3;
+  transform: none !important;
+  transform-origin: top right;
+}
+
+/* Slightly enlarge the terminal panel. The styled-components wrapper around
+   Terminal.jsx is the element we scale (transform on the outer wrapper does
+   not interfere with the styled-components CSS on .terminal-container). */
+.Intro-content > .Intro-terminal > div {
+  transform: scale(1.2);
+  transform-origin: top right;
+}
+
+/* Let Terminal.jsx's own styled-components CSS win for background, border,
+   and box-shadow. We only neutralize the bare .Intro-terminal wrapper, not
+   the styled-components output inside it. */
+.Intro-terminal {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Mobile: dock Terminal at top-right under the intro, no scale. */
+@media (max-width: 640px) {
+  .Intro-content > .Intro-terminal {
+    top: 140px !important;
+    right: 60px !important;
+    bottom: auto !important;
+  }
+  .Intro-content > .Intro-terminal > div {
+    transform: scale(0.7);
+    transform-origin: top right;
+  }
+}
+
 .App-content h1,
 .App-content h2,
 .App-content h3,
@@ -304,6 +380,149 @@ body {
   margin: 0;
   padding: 0;
   color: inherit;
+}
+
+/* ===== Terminal carve-out =====
+   Re-apply the styled-components values explicitly because the universal
+   !important reset above strips them. These selectors are scoped to
+   .Intro-terminal descendants so they never escape and never override
+   unrelated content. */
+.Intro-terminal .terminal-container {
+  background: linear-gradient(180deg, #141414 0%, #0a0a0a 100%) !important;
+  background-clip: padding-box !important;
+  border: 1px solid #262626 !important;
+  border-radius: 14px !important;
+  box-shadow:
+    0 36px 90px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset,
+    0 1px 0 rgba(255, 255, 255, 0.04) inset !important;
+  width: 540px !important;
+  max-width: 540px !important;
+  color: #d6deeb !important;
+  font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.Intro-terminal .title-bar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 16px 20px !important;
+  background: linear-gradient(180deg, #1f1f1f 0%, #141414 100%) !important;
+  border-bottom: 1px solid #262626 !important;
+  margin: 0 !important;
+}
+
+.Intro-terminal .traffic-lights {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.Intro-terminal .dot {
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.Intro-terminal .dot-red   { background: radial-gradient(circle at 30% 30%, #ff8585, #ef4444 70%, #991b1b) !important; }
+.Intro-terminal .dot-yellow{ background: radial-gradient(circle at 30% 30%, #fde68a, #eab308 70%, #854d0e) !important; }
+.Intro-terminal .dot-green { background: radial-gradient(circle at 30% 30%, #86efac, #22c55e 70%, #166534) !important; }
+
+.Intro-terminal .terminal-title {
+  color: #cbd5e1 !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  line-height: 1 !important;
+  font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.Intro-terminal .terminal-body {
+  padding: 22px 22px 24px !important;
+  font-size: 15.5px !important;
+  line-height: 1.6 !important;
+  color: #d6deeb !important;
+  margin: 0 !important;
+}
+
+.Intro-terminal .line {
+  display: flex !important;
+  align-items: baseline !important;
+  flex-wrap: wrap !important;
+  color: #d6deeb !important;
+  margin-bottom: 12px !important;
+  font-size: 15px !important;
+  font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace !important;
+  padding: 0 !important;
+}
+
+.Intro-terminal .prompt { color: #e5e5e5 !important; font-weight: 600 !important; margin: 0 !important; padding: 0 !important; }
+.Intro-terminal .sep    { color: #6b7280 !important; margin: 0 4px !important; padding: 0 !important; }
+.Intro-terminal .path   { color: #e5e5e5 !important; font-weight: 600 !important; margin: 0 !important; padding: 0 !important; }
+.Intro-terminal .dollar { color: #a3a3a3 !important; font-weight: 700 !important; margin: 0 8px 0 6px !important; padding: 0 !important; }
+.Intro-terminal .cmd    { color: #d6deeb !important; margin: 0 !important; padding: 0 !important; }
+
+.Intro-terminal .caret {
+  display: inline-block !important;
+  width: 9px !important;
+  height: 18px !important;
+  margin-left: 8px !important;
+  background: #ffffff !important;
+  box-shadow: none !important;
+  animation: blink 1s steps(2, end) infinite !important;
+  vertical-align: -3px !important;
+  border-radius: 1px !important;
+  padding: 0 !important;
+}
+
+.Intro-terminal .out {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 8px !important;
+  margin-bottom: 12px !important;
+  color: #a3a3a3 !important;
+  font-size: 14.5px !important;
+  line-height: 1.55 !important;
+  font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace !important;
+  padding: 0 !important;
+}
+
+.Intro-terminal .bullet {
+  color: #6b7280 !important;
+  width: 14px !important;
+  text-align: center !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.Intro-terminal .green-line { margin-bottom: 12px !important; padding: 0 !important; }
+
+.Intro-terminal .line-1 { animation: green-color 3s infinite !important; }
+.Intro-terminal .line-2 { animation: green-color 3.5s infinite !important; }
+.Intro-terminal .line-3 { animation: green-color 2s infinite !important; }
+
+@keyframes green-color {
+  0% { color: #525252; }
+  50% { color: #a3a3a3; }
+  100% { color: #525252; }
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
 }
 
 .App-content h2 {
@@ -350,5 +569,19 @@ body {
 
   .App-content h2 {
     font-size: 1.6rem;
+  }
+
+  .Intro-content > .Intro-logo-block {
+    width: 280px;
+    height: 280px;
+    margin-top: 14px;
+  }
+
+  .Intro-content > .Intro-terminal {
+    /* Let it size to content; the inner styled-components width handles it. */
+    width: auto !important;
+    height: auto !important;
+    margin-top: 0;
+    right: 16px;
   }
 }
