@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import DecryptedText from './DecryptedText';
+
 
 const Terminal = () => {
   return (
     <StyledWrapper>
       <div className="terminal-container">
         <div className="title-bar">
-          <div className="terminal-title">iam.Srikar</div>
+          <div className="terminal-title">iam.Srikar.YK</div>
           <div className="traffic-lights">
             <span className="dot dot-red" />
             <span className="dot dot-yellow" />
@@ -18,23 +20,60 @@ const Terminal = () => {
             <span className="sep">:</span>
             <span className="path">~</span>
             <span className="dollar">$</span>
-            <span className="cmd">decrypt_portfolio.sh</span>
+            <span className="cmd">
+              <DecryptedText
+                text="decrypt-portfolio.sh"
+                revealDirection="start"
+                sequential={true}
+                useOriginalCharsOnly={false}
+                animateOn="view"
+              /></span>
           </div>
           <div className="out green-line line-1">
-            <span className="bullet">›</span> initializing portfolio..
+            <span className="bullet">›</span> 
+            <DecryptedText
+                text="initalising skills .."
+                revealDirection="start"
+                sequential={true}
+                useOriginalCharsOnly={false}
+                animateOn="view"
+              />
           </div>
           <div className="out green-line line-3">
-            <span className="bullet">›</span> capabilities loaded
+            <span className="bullet">›</span> 
+            <DecryptedText
+                text="capabilities loaded"
+                revealDirection="start"
+                sequential={true}
+                useOriginalCharsOnly={false}
+                animateOn="view"
+              />
           </div>
           <div className="out green-line line-3">
-            <span className="bullet">›</span> caffeine injected
+            <span className="bullet">›</span> 
+            <DecryptedText
+                text="caffine injected"
+                revealDirection="start"
+                sequential={true}
+                useOriginalCharsOnly={false}
+                animateOn="view"
+              />
           </div>
+
 
           <div className="line">
             <span className="sep">:</span>
             <span className="path">~</span>
             <span className="dollar">$</span>
-            <span className="cmd">deploying-creativity</span>
+            <span className="cmd">
+              <DecryptedText
+                text="deploying-creativity"
+                revealDirection="start"
+                sequential={true}
+                useOriginalCharsOnly={false}
+                animateOn="view"
+              />
+            </span>
             <span className="caret" aria-hidden="true" />
           </div>
         </div>
@@ -43,10 +82,11 @@ const Terminal = () => {
   );
 };
 
+
 const StyledWrapper = styled.div`
-  /* Outer wrapper stays transparent so App.css can position/scale it freely. */
   display: inline-block;
   line-height: 0;
+
 
   .terminal-container {
     width: 540px;
@@ -64,7 +104,7 @@ const StyledWrapper = styled.div`
     background-clip: padding-box;
   }
 
-  /* ----- Title bar ----- */
+
   .title-bar {
     display: flex;
     align-items: center;
@@ -75,11 +115,13 @@ const StyledWrapper = styled.div`
     user-select: none;
   }
 
+
   .traffic-lights {
     display: flex;
     align-items: center;
     gap: 10px;
   }
+
 
   .dot {
     width: 16px;
@@ -92,6 +134,7 @@ const StyledWrapper = styled.div`
       0 1px 2px rgba(0, 0, 0, 0.3);
   }
 
+
   .dot-red {
     background: radial-gradient(circle at 30% 30%, #ff8585, #ef4444 70%, #991b1b);
   }
@@ -102,6 +145,7 @@ const StyledWrapper = styled.div`
     background: radial-gradient(circle at 30% 30%, #86efac, #22c55e 70%, #166534);
   }
 
+
   .terminal-title {
     color: #cbd5e1;
     font-size: 15px;
@@ -111,12 +155,13 @@ const StyledWrapper = styled.div`
     font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace;
   }
 
-  /* ----- Body ----- */
+
   .terminal-body {
     padding: 22px 22px 24px;
     font-size: 15.5px;
     line-height: 1.6;
   }
+
 
   .line {
     display: flex;
@@ -127,6 +172,7 @@ const StyledWrapper = styled.div`
     margin-bottom: 12px;
     font-size: 15px;
   }
+
 
   .prompt {
     color: #e5e5e5;
@@ -149,6 +195,7 @@ const StyledWrapper = styled.div`
     color: #d6deeb;
   }
 
+
   .caret {
     display: inline-block;
     width: 9px;
@@ -161,6 +208,7 @@ const StyledWrapper = styled.div`
     border-radius: 1px;
   }
 
+
   .out {
     display: flex;
     align-items: baseline;
@@ -171,6 +219,7 @@ const StyledWrapper = styled.div`
     line-height: 1.55;
   }
 
+
   .bullet {
     color: #6b7280;
     width: 14px;
@@ -178,9 +227,11 @@ const StyledWrapper = styled.div`
     flex-shrink: 0;
   }
 
+
   .green-line {
     margin-bottom: 12px;
   }
+
 
   .line-1 {
     animation: green-color 3s infinite;
@@ -192,16 +243,19 @@ const StyledWrapper = styled.div`
     animation: green-color 2s infinite;
   }
 
+
   @keyframes green-color {
     0% { color: #525252; }
     50% { color: #a3a3a3; }
     100% { color: #525252; }
   }
 
+
   @keyframes blink {
     0%, 50% { opacity: 1; }
     50.01%, 100% { opacity: 0; }
   }
 `;
+
 
 export default Terminal;
