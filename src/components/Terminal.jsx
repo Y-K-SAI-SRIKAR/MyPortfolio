@@ -105,7 +105,7 @@ const StyledWrapper = styled.div`
       0 36px 90px rgba(0, 0, 0, 0.6),
       0 0 0 1px rgba(255, 255, 255, 0.02) inset,
       0 1px 0 rgba(255, 255, 255, 0.04) inset;
-    font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+    font-family: 'Iceland', cursive;
     color: #d6deeb;
     overflow: hidden;
     background-clip: padding-box;
@@ -155,17 +155,17 @@ const StyledWrapper = styled.div`
 
   .terminal-title {
     color: #cbd5e1;
-    font-size: 15px;
+    font-size: 19px;
     letter-spacing: 0.5px;
     font-weight: 600;
     line-height: 1;
-    font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+    font-family: 'Iceland', cursive;
   }
 
 
   .terminal-body {
     padding: 22px 22px 24px;
-    font-size: 15.5px;
+    font-size: 19px;
     line-height: 1.6;
   }
 
@@ -177,7 +177,8 @@ const StyledWrapper = styled.div`
     gap: 0;
     color: #d6deeb;
     margin-bottom: 12px;
-    font-size: 15px;
+    font-size: 19px;
+    font-family: 'Iceland', cursive;
   }
 
 
@@ -222,8 +223,9 @@ const StyledWrapper = styled.div`
     gap: 8px;
     margin-bottom: 12px;
     color: #a3a3a3;
-    font-size: 14.5px;
+    font-size: 17px;
     line-height: 1.55;
+    font-family: 'Iceland', cursive;
   }
 
 
