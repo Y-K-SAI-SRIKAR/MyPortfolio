@@ -63,7 +63,6 @@ body {
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-/* Keep the actual loader visible */
 .App-Loader > * {
   display: block;
   background: transparent !important;
@@ -79,12 +78,20 @@ body {
   pointer-events: auto;
 }
 
-/* Do NOT destroy the loader visuals inside */
+/* Strip generic boxes from loader */
 .App-Loader * {
   box-sizing: border-box;
+  border: none !important;
+  outline: none !important;
 }
 
-/* Hide loader after completion */
+.App-Loader svg text,
+.App-Loader svg tspan {
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+}
+
 .App-Loader.loaded {
   opacity: 0;
   visibility: hidden;
@@ -117,13 +124,11 @@ body {
   display: block;
 }
 
-/* Reveal the Silk background only after the loader finishes */
 .App-Loader.loaded ~ .App-Background {
   opacity: 1;
   visibility: visible;
 }
 
-/* Content: plain free text, no box */
 .Content {
   position: relative;
   z-index: 1;
@@ -156,7 +161,10 @@ body {
   transform: translateY(0);
 }
 
-/* Left-aligned wrapper for the TextType */
+/* =========================================
+   TOP TEXT CONTENT
+   ========================================= */
+
 .Intro-content {
   position: absolute;
   top: 120px;
@@ -166,9 +174,11 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 20px;
-  /* Size to the longest TextType line so layout doesn't shift as text types */
-  width: max-content;
+  
+  /* Critical: max-content allows clamp() font sizes to remain large */
+  width: max-content; 
   max-width: calc(100% - 64px);
+  
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -179,7 +189,106 @@ body {
   text-align: left;
 }
 
-/* TextType (left side) — single line, no wrapping */
+/* =========================================
+   BOTTOM ROW LAYOUT (Sidebar -> Terminal -> Logo)
+   ========================================= */
+
+.Intro-bottom-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  
+  /* Large gap to compensate for Terminal scaling out of its bounding box */
+  gap: 80px; 
+  
+  width: max-content;
+  margin-top: 50px; 
+  transform: none; /* No shifting */
+}
+
+/* 1. SIDEBAR */
+.Intro-NavBar {
+  flex-shrink: 0;
+  z-index: 4;
+}
+
+/* Fix LineSidebar grid boxes and restore margin */
+.Intro-NavBar ul,
+.Intro-NavBar li,
+.Intro-NavBar span,
+.Intro-NavBar nav {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.line-sidebar__index {
+  margin-right: 0.8rem !important; 
+}
+
+/* 2. TERMINAL */
+.Intro-content .Intro-terminal {
+  position: relative !important;
+  margin: 0 !important;
+  width: auto;
+  pointer-events: auto;
+  overflow: visible;
+  z-index: 3;
+  flex-shrink: 0;
+}
+
+/* Visually scale the terminal */
+.Intro-content .Intro-terminal > div {
+  transform: scale(1.15); 
+  transform-origin: center;
+}
+
+/* 3. 3D LOGO */
+.Intro-content .Intro-logo-block {
+  position: relative;
+  width: 480px; 
+  height: 480px;
+  
+  /* Pulls the transparent canvas left to visually tighten the gap without shrinking the 3D model */
+  margin-left: -80px; 
+  
+  pointer-events: auto;
+  overflow: visible;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.Intro-logo-block > * {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: visible;
+}
+
+.Intro-logo-block canvas,
+.Intro-logo-block svg {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: visible;
+}
+
+/* OPTIONAL SCROLL ANIMATION */
+.Intro-content .Scroll-down-anim {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  flex-shrink: 0; 
+  pointer-events: auto;
+}
+
+/* =========================================
+   TYPOGRAPHY
+   ========================================= */
+
 .text-type {
   display: inline-block;
   font-family: 'Iceland', cursive;
@@ -216,7 +325,6 @@ body {
   display: none;
 }
 
-/* RotatingText (sits below TextType with a 20px gap) */
 .Intro-about {
   display: flex;
   flex-direction: row;
@@ -287,82 +395,6 @@ body {
   box-shadow: none !important;
 }
 
-/* Intro-logo-block (3D SVG sits below Intro-about, left aligned, free placement) */
-.Intro-content > .Intro-logo-block {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 20px;
-  width: 480px;
-  height: 480px;
-  pointer-events: auto;
-  overflow: visible;
-  z-index: 2;
-}
-
-.Intro-logo-block > * {
-  display: block;
-  width: 100% !important;
-  height: 100% !important;
-  overflow: visible;
-}
-
-.Intro-logo-block canvas,
-.Intro-logo-block svg {
-  display: block;
-  width: 100% !important;
-  height: 100% !important;
-  overflow: visible;
-}
-
-/* Intro-terminal (sits beside the 3D logo, right-aligned)
-   Fixed to the viewport (NOT the flex column) so TextType typing/deleting
-   does not drag it around. */
-.Intro-content > .Intro-terminal {
-  position: fixed !important;
-  top: 320px !important;
-  right: 120px !important;
-  bottom: auto !important;
-  left: auto !important;
-  margin: 0 !important;
-  width: auto;
-  pointer-events: auto;
-  overflow: visible;
-  z-index: 3;
-  transform: none !important;
-  transform-origin: top right;
-}
-
-/* Slightly enlarge the terminal panel. The styled-components wrapper around
-   Terminal.jsx is the element we scale (transform on the outer wrapper does
-   not interfere with the styled-components CSS on .terminal-container). */
-.Intro-content > .Intro-terminal > div {
-  transform: scale(1.2);
-  transform-origin: top right;
-}
-
-/* Let Terminal.jsx's own styled-components CSS win for background, border,
-   and box-shadow. We only neutralize the bare .Intro-terminal wrapper, not
-   the styled-components output inside it. */
-.Intro-terminal {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* Mobile: dock Terminal at top-right under the intro, no scale. */
-@media (max-width: 640px) {
-  .Intro-content > .Intro-terminal {
-    top: 140px !important;
-    right: 60px !important;
-    bottom: auto !important;
-  }
-  .Intro-content > .Intro-terminal > div {
-    transform: scale(0.7);
-    transform-origin: top right;
-  }
-}
-
 .App-content h1,
 .App-content h2,
 .App-content h3,
@@ -382,11 +414,10 @@ body {
   color: inherit;
 }
 
-/* ===== Terminal carve-out =====
-   Re-apply the styled-components values explicitly because the universal
-   !important reset above strips them. These selectors are scoped to
-   .Intro-terminal descendants so they never escape and never override
-   unrelated content. */
+/* =========================================
+   TERMINAL UI CARVEOUT
+   ========================================= */
+
 .Intro-terminal .terminal-container {
   background: linear-gradient(180deg, #141414 0%, #0a0a0a 100%) !important;
   background-clip: padding-box !important;
@@ -396,8 +427,8 @@ body {
     0 36px 90px rgba(0, 0, 0, 0.6),
     0 0 0 1px rgba(255, 255, 255, 0.02) inset,
     0 1px 0 rgba(255, 255, 255, 0.04) inset !important;
-  width: 540px !important;
-  max-width: 540px !important;
+  width: 470px !important;
+  max-width: 470px !important;
   color: #d6deeb !important;
   font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace !important;
   display: flex !important;
@@ -547,14 +578,16 @@ body {
   color: #d6d6d8;
 }
 
-/* Remove focus-box feel */
 :focus,
 :focus-visible {
   outline: none;
   box-shadow: none;
 }
 
-/* Mobile */
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+
 @media (max-width: 640px) {
   .Intro-content {
     top: 64px;
@@ -571,17 +604,32 @@ body {
     font-size: 1.6rem;
   }
 
-  .Intro-content > .Intro-logo-block {
+  .Intro-bottom-row {
+    flex-direction: column; 
+    gap: 40px;
+    transform: none; 
+    align-items: flex-start;
+  }
+
+  .Intro-content .Intro-logo-block {
     width: 280px;
     height: 280px;
     margin-top: 14px;
+    margin-left: 0; /* Resets the negative padding trick for mobile */
   }
 
-  .Intro-content > .Intro-terminal {
-    /* Let it size to content; the inner styled-components width handles it. */
+  .Intro-content .Intro-terminal {
     width: auto !important;
     height: auto !important;
     margin-top: 0;
-    right: 16px;
+  }
+  
+  .Intro-content .Intro-terminal > div {
+    transform: scale(0.85);
+    transform-origin: center top;
+  }
+  
+  .Intro-content .Scroll-down-anim {
+    margin-top: 10px;
   }
 }

@@ -8,23 +8,23 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const DEFAULT_TEXT = 'Draw Attention';
+const DEFAULT_TEXT = 'Loading..';
 
 const StrokeText = ({
   text = DEFAULT_TEXT,
-  strokeColor = '#A78BFA',
+  strokeColor = '#58a3b0',
   fillColor = '#F8FAFC',
-  strokeWidth = 1.4,
-  drawDuration = 1.6,
-  fillDelay = 0.2,
-  stagger = 0.05,
-  ease = 'power2.out',
+  strokeWidth = 1.3,
+  drawDuration = 0.75,
+  fillDelay = 0.25,
+  stagger = 0.035,
+  ease = 'sine.inOut',
   trigger = 'mount',
-  fillMode = 'wipe',
-  fontSize = 128,
-  fontWeight = 800,
+  fillMode = 'fade',
+  fontSize = 150,
+  fontWeight = 850,
   letterSpacing = -4,
-  reverse = false,
+  reverse = true,
   className = '',
   style = {}
 }) => {
@@ -43,6 +43,7 @@ const StrokeText = ({
 
   const fontStyle = useMemo(
     () => ({
+      fontFamily: "'Iceland', cursive",
       fontSize: `${fontSize}px`,
       fontWeight,
       letterSpacing: `${letterSpacing}px`

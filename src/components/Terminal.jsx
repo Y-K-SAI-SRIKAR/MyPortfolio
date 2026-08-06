@@ -8,7 +8,14 @@ const Terminal = () => {
     <StyledWrapper>
       <div className="terminal-container">
         <div className="title-bar">
-          <div className="terminal-title">iam.Srikar.YK</div>
+          <div className="terminal-title">
+            <DecryptedText
+                text="iam.Srikar.YK"
+                revealDirection="start"
+                sequential={true}
+                useOriginalCharsOnly={true}
+                animateOn="view"
+              /></div>
           <div className="traffic-lights">
             <span className="dot dot-red" />
             <span className="dot dot-yellow" />
@@ -32,7 +39,7 @@ const Terminal = () => {
           <div className="out green-line line-1">
             <span className="bullet">›</span> 
             <DecryptedText
-                text="initalising skills .."
+                text="Initalizing skills .."
                 revealDirection="start"
                 sequential={true}
                 useOriginalCharsOnly={false}
@@ -42,7 +49,7 @@ const Terminal = () => {
           <div className="out green-line line-3">
             <span className="bullet">›</span> 
             <DecryptedText
-                text="capabilities loaded"
+                text="Capabilities loaded"
                 revealDirection="start"
                 sequential={true}
                 useOriginalCharsOnly={false}
@@ -52,7 +59,7 @@ const Terminal = () => {
           <div className="out green-line line-3">
             <span className="bullet">›</span> 
             <DecryptedText
-                text="caffine injected"
+                text="Caffeine injected"
                 revealDirection="start"
                 sequential={true}
                 useOriginalCharsOnly={false}
@@ -67,7 +74,7 @@ const Terminal = () => {
             <span className="dollar">$</span>
             <span className="cmd">
               <DecryptedText
-                text="deploying-creativity"
+                text="Deploying-Creativity..."
                 revealDirection="start"
                 sequential={true}
                 useOriginalCharsOnly={false}
