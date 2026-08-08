@@ -39,7 +39,7 @@ const Terminal = () => {
           <div className="out green-line line-1">
             <span className="bullet">›</span> 
             <DecryptedText
-                text="Initalizing skills .."
+                text="Initalizing skills"
                 revealDirection="start"
                 sequential={true}
                 useOriginalCharsOnly={false}
@@ -74,7 +74,7 @@ const Terminal = () => {
             <span className="dollar">$</span>
             <span className="cmd">
               <DecryptedText
-                text="Deploying-Creativity..."
+                text="Deploying-Creativity /<"
                 revealDirection="start"
                 sequential={true}
                 useOriginalCharsOnly={false}

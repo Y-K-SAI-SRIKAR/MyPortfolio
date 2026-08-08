@@ -1,0 +1,30 @@
+/* Combining classes increases specificity to override the global reset */
+.App-content span.shiny-text {
+  display: inline-block !important;
+  font-family: 'Iceland', cursive !important;
+  font-size: clamp(1.6rem, 3vw, 3rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.05em;
+  text-align: center;
+  
+  /* Applying the custom colors you passed as props in your JSX */
+  background-image: linear-gradient(120deg, #ffffff 35%, #000000 50%, #ffffff 65%) !important;
+  background-size: 200% auto !important;
+  
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  
+  animation: shine 7.5s linear infinite !important;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}

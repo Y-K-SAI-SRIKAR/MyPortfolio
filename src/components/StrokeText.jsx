@@ -8,12 +8,12 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const DEFAULT_TEXT = 'Loading..';
+const DEFAULT_TEXT = 'Loading ..';
 
 const StrokeText = ({
   text = DEFAULT_TEXT,
-  strokeColor = '#58a3b0',
-  fillColor = '#F8FAFC',
+  strokeColor = '#31a59ad3',
+  fillColor = '#eff3f4ed',
   strokeWidth = 1.3,
   drawDuration = 0.75,
   fillDelay = 0.25,
