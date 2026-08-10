@@ -450,6 +450,8 @@ body {
   
   background-image: linear-gradient(120deg, #ffffff 35%, #498995 50%, #ffffff 65%) !important;
   background-size: 200% auto !important;
+
+  
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -675,6 +677,28 @@ body {
 @keyframes blink {
   0%, 50% { opacity: 1; }
   50.01%, 100% { opacity: 0; }
+}
+
+/* =========================================
+   PAGES STACKING FIX & BORDER REMOVAL
+   ========================================= */
+.Pages {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add this to forcefully remove any inherited global borders inside the pages section */
+.Pages * {
+  border: none !important;
+  outline: none !important;
+}
+
+.App *{
+  border: none !important;
+  outline: none !important;
 }
 
 /* =========================================

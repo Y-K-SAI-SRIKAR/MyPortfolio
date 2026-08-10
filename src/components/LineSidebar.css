@@ -47,9 +47,10 @@
   position: relative;
   display: inline-flex;
   align-items: baseline;
+  font-family: 'Iceland', cursive !important;
   font-size: var(--font-size);
   line-height: 1.2;
-  color: color-mix(in srgb, var(--accent-color) calc(var(--effect, 0) * 100%), var(--text-color));
+  color: color-mix(in srgb, var(--accent-color) calc(var(--effect, 0) * 100%), var(--text-color)) !important;
   transform: translateX(calc(var(--effect, 0) * var(--max-shift)));
 }
 
@@ -66,7 +67,7 @@
   left: calc(-1 * var(--marker-length) - var(--marker-gap));
   height: 1px;
   width: var(--marker-length);
-  background-color: color-mix(in srgb, var(--accent-color) calc(var(--effect, 0) * 100%), var(--marker-color));
+  background-color: color-mix(in srgb, var(--accent-color) calc(var(--effect, 0) * 100%), var(--marker-color)) !important;
   transform-origin: left center;
   transform: translateY(-50%) scaleX(calc(0.7 + var(--effect, 0) * 0.5));
 }

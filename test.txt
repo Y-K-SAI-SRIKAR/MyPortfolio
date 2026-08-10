@@ -450,6 +450,8 @@ body {
   
   background-image: linear-gradient(120deg, #ffffff 35%, #498995 50%, #ffffff 65%) !important;
   background-size: 200% auto !important;
+
+  
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -678,6 +680,28 @@ body {
 }
 
 /* =========================================
+   PAGES STACKING FIX & BORDER REMOVAL
+   ========================================= */
+.Pages {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add this to forcefully remove any inherited global borders inside the pages section */
+.Pages * {
+  border: none !important;
+  outline: none !important;
+}
+
+.App *{
+  border: none !important;
+  outline: none !important;
+}
+
+/* =========================================
    MOBILE LAYOUT
    ========================================= */
 @media (max-width: 640px) {
@@ -739,12 +763,6 @@ body {
 
 
 
-
-
-
-
-
-
 App.jsx:
 import { useEffect, useState } from "react";
 import "./App.css";
@@ -755,11 +773,19 @@ import Terminal from "./components/Terminal";
 import StrokeText from "./components/StrokeText";
 import LineSidebar from "./components/LineSidebar";
 import ShinyText from "./components/ShinyText";
+import About from "./Pages/About";
+import Connect from "./Pages/Connect";
+import Acheive from "./Pages/Acheive";
+import ExtraCurr from "./Pages/ExtraCurr";
+import Hobbies from "./Pages/Hobbies";
+import Projects from "./Pages/Projects";
+import Skills from "./Pages/Skills";
 import { SVG3D } from "3dsvg";
 
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [activeIndex, setActiveIndex] = useState(null);
   const mySvg = `<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192"><path d="M24,0L36,0L48,0L60,0L72,0L84,0L96,0L108,0L120,0L132,0L132,12L120,12L108,12L96,12L84,12L72,12L60,12L48,12L36,12L36,24L36,36L36,48L36,60L36,72L48,72L60,72L72,72L84,72L96,72L108,72L120,72L120,84L120,96L120,108L120,120L120,132L120,144L120,156L108,156L96,156L84,156L72,156L60,156L48,156L36,156L24,156L12,156L12,144L24,144L36,144L36,132L36,120L36,108L36,96L48,96L60,96L72,96L72,108L72,120L72,132L72,144L84,144L84,132L84,120L96,120L96,132L96,144L108,144L108,132L108,120L108,108L108,96L108,84L96,84L84,84L72,84L60,84L48,84L36,84L24,84L24,72L24,60L24,48L24,36L24,24L24,12L24,0Z M48,24L60,24L60,36L72,36L72,24L84,24L84,36L72,36L72,48L60,48L60,60L48,60L48,48L48,36L48,24Z M96,24L108,24L120,24L120,36L108,36L108,48L108,60L96,60L96,48L96,36L96,24Z M72,48L84,48L84,60L72,60L72,48Z M120,48L132,48L132,60L120,60L120,48Z M84,96L96,96L96,108L84,108L84,96Z M48,108L60,108L60,120L48,120L48,108Z M48,132L60,132L60,144L48,144L48,132Z" fill="black" fill-rule="evenodd"/></svg>`;
 
   useEffect(() => {
@@ -820,23 +846,22 @@ function App() {
             <div className="Intro-bottom-row">
               <div className="Intro-NavBar">
                 <LineSidebar
-                  items={['Overview', 'Components', 'Animations', 'Backgrounds', 'Showcase','abcd','efdgh']}
-                  accentColor="#4cc0d3"
-                  textColor="#c4c4c4"
-                  markerColor="#6c6c6c"
+                  accentColor="#a00909d3"
+                  textColor="#e1d7d7cb"
+                  markerColor="#ffffff"
                   showIndex ={false}
                   showMarker ={true}
                   proximityRadius={100}
-                  maxShift={30}
+                  maxShift={50}
                   falloff="smooth"
-                  markerLength={60}
-                  markerGap={0}
+                  markerLength={40}
+                  markerGap={1}
                   tickScale={0.5}
                   scaleTick ={true}
                   itemGap={20}
-                  fontSize={1.15}
-                  smoothing={100}
-                  defaultActive={0}
+                  fontSize={1.50}
+                  smoothing={250}
+                  defaultActive={null}
                   onItemClick={(index, label) => console.log(index, label)}
                 />
               </div>
@@ -854,7 +879,7 @@ function App() {
                   animateSpeed={1.3}
                   zoom={5.8}
                   cursorOrbit
-                  orbitStrength={0.4}
+                  orbitStrength={0.6}
                   resetOnIdle={true}
                   resetDelay={2.5}
                   lightIntensity={1.3}
@@ -878,6 +903,15 @@ function App() {
             </div>
           </div>
         </div>
+      </section>
+      <section className="Pages">
+        <About/>
+        <Skills/>
+        <Projects/>
+        <ExtraCurr/>
+        <Acheive/>
+        <Hobbies/>
+        <Connect/>
       </section>
     </section>
   );

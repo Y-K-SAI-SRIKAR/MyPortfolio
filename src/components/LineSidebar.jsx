@@ -8,18 +8,13 @@ const FALLOFF_CURVES = {
 };
 
 const DEFAULT_ITEMS = [
-  'Overview',
-  'Components',
-  'Animations',
-  'Backgrounds',
-  'Showcase',
-  'Playground',
-  'Templates',
-  'Changelog',
-  'Community',
-  'Resources',
-  'Documentation',
-  'Support'
+  'ABOUT',
+  'SKILLS',
+  'PROJECTS',
+  'LEADERSHIP',
+  'ACHEIVEMENTS',
+  'HOBBIES',
+  'CONNECT'
 ];
 
 const LineSidebar = ({

@@ -12,7 +12,7 @@ const DEFAULT_TEXT = 'Loading ..';
 
 const StrokeText = ({
   text = DEFAULT_TEXT,
-  strokeColor = '#31a59ad3',
+  strokeColor = '#a00909d3',
   fillColor = '#eff3f4ed',
   strokeWidth = 1.3,
   drawDuration = 0.75,
