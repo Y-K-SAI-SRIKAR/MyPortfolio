@@ -116,6 +116,21 @@ const LineSidebar = ({
     (index, label) => {
       setActiveIndex(index);
       onItemClick?.(index, label);
+
+      // Find the matching section
+      const target = document.getElementById(`page-${index}`);
+      
+      // Use Lenis for buttery scroll if available
+      if (target && window.lenis) {
+        window.lenis.scrollTo(target, { 
+          offset: 0, 
+          duration: 1.5, 
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) // Smooth ease-out
+        });
+      } else if (target) {
+        // Fallback for native smooth scroll
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
     },
     [onItemClick]
   );

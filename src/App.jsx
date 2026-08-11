@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import Lenis from "lenis";
 import Silk from "./components/Silk";
 import TextType from "./components/TextType";
 import RotatingText from "./components/RotatingText";
@@ -28,6 +29,33 @@ function App() {
     }, 1300); 
 
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+  const lenis = new Lenis({
+    duration: 1.2,
+    smoothWheel: true,
+    wheelMultiplier: 1,
+    touchMultiplier: 1,
+  });
+
+  // Expose Lenis globally
+  window.lenis = lenis;
+
+  let rafId;
+
+  const raf = (time) => {
+    lenis.raf(time);
+    rafId = requestAnimationFrame(raf);
+  };
+
+  rafId = requestAnimationFrame(raf);
+
+  return () => {
+    cancelAnimationFrame(rafId);
+    lenis.destroy();
+    delete window.lenis; // Clean up on unmount
+  };
   }, []);
 
   return (
@@ -139,13 +167,13 @@ function App() {
         </div>
       </section>
       <section className="Pages">
-        <About/>
-        <Skills/>
-        <Projects/>
-        <ExtraCurr/>
-        <Acheive/>
-        <Hobbies/>
-        <Connect/>
+        <div id="page-0"><About/></div>
+        <div id="page-1"><Skills/></div>
+        <div id="page-2"><Projects/></div>
+        <div id="page-3"><ExtraCurr/></div>
+        <div id="page-4"><Acheive/></div>
+        <div id="page-5"><Hobbies/></div>
+        <div id="page-6"><Connect/></div>
       </section>
     </section>
   );
