@@ -67,7 +67,7 @@ function App() {
         <Silk
           speed={8.5}
           scale={1}
-          color="#1c1c1e"
+          color="#18181f"
           noiseIntensity={1.2}
           rotation={0.45}
         />
@@ -113,7 +113,7 @@ function App() {
                   markerColor="#ffffff"
                   showIndex ={false}
                   showMarker ={true}
-                  proximityRadius={100}
+                  proximityRadius={80}
                   maxShift={50}
                   falloff="smooth"
                   markerLength={40}
