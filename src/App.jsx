@@ -66,7 +66,7 @@ function App() {
       <div className="App-Background">
         <Silk
           speed={8.5}
-          scale={0.9}
+          scale={1}
           color="#1c1c1e"
           noiseIntensity={1.2}
           rotation={0.45}

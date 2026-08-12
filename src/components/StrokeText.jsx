@@ -8,7 +8,7 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const DEFAULT_TEXT = 'Loading ..';
+const DEFAULT_TEXT = 'Loading';
 
 const StrokeText = ({
   text = DEFAULT_TEXT,

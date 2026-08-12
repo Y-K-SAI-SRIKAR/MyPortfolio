@@ -11,22 +11,24 @@
 }
 
 /* =========================================
-   GLOBALS & SCROLLBAR HIDING
+   GLOBALS & SCROLL UNLOCK
    ========================================= */
 html,
 body,
 #root {
   width: 100%;
-  min-height: 100%;
+  height: auto !important; /* Critical to unlock scroll */
+  min-height: 100vh;
   margin: 0;
   padding: 0;
+  display: block !important; /* Kills hidden Vite flex layouts */
   background: #0a0a0c;
   font-family: 'Iceland', cursive;
-  -ms-overflow-style: none;    /* Hides scrollbar in IE and Edge */
-  scrollbar-width: none;       /* Hides scrollbar in Firefox */
+  -ms-overflow-style: none;    
+  scrollbar-width: none;  
+  overflow-x: hidden; /* <-- Add this line to stop global horizontal scrolling */
 }
 
-/* Hides scrollbar in Chrome, Safari and Opera */
 html::-webkit-scrollbar,
 body::-webkit-scrollbar,
 #root::-webkit-scrollbar {
@@ -36,7 +38,9 @@ body::-webkit-scrollbar,
 .App {
   position: relative;
   width: 100%;
+  height: auto !important; /* Critical to unlock scroll */
   min-height: 100vh;
+  overflow: visible !important;
   background: #0a0a0c;
   color: #fff;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -106,14 +110,14 @@ body::-webkit-scrollbar,
 }
 
 .App-Background {
-  position: fixed;
+  position: absolute !important;
   inset: 0;
   z-index: 0;
-  width: 100vw;
+  width: 100%; /* Changed from 100vw to 100% */
   height: 100vh;
   overflow: hidden;
   background: #0a0a0c;
-  opacity: 0;
+  opacity: 1 !important;
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.6s ease, visibility 0.6s ease;
@@ -687,7 +691,7 @@ body::-webkit-scrollbar,
 /* Add this rule to fade the pages in when the loader is done */
 .App-Loader.loaded ~ .Pages {
   opacity: 1;
-  transform: translateY(0);
+  transform: none !important;
 }
 
 /* Add this to forcefully remove any inherited global borders inside the pages section */
@@ -700,6 +704,27 @@ body::-webkit-scrollbar,
   border: none !important;
   outline: none !important;
 }
+
+.App-Loader *{
+  border: none !important;
+  outline: none !important;
+}
+
+.App-Background *{
+  border: none !important;
+  outline: none !important;
+}
+
+.App-content *{
+  border: none !important;
+  outline: none !important;
+}
+
+.Intro-content *{
+  border: none !important;
+  outline: none !important;
+}
+
 
 /* =========================================
    MOBILE LAYOUT
@@ -759,4 +784,17 @@ body::-webkit-scrollbar,
     margin-top: 40px;
     padding-bottom: 20px;
   }
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
