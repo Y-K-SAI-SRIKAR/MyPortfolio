@@ -10,7 +10,6 @@
   appearance: none;
 }
 
-
 .About {
   position: relative;
   width: 100%;
@@ -23,14 +22,14 @@
 }
 
 .About-Background {
-  position: absolute !important; /* Locks to the About page, not the window */
+  position: absolute !important; 
   top: 0;
   left: 0;
   z-index: 0;
   width: 100%;
   height: 100%; 
   background: transparent !important;
-  opacity: 1 !important; /* Forces it to be visible */
+  opacity: 1 !important; 
   visibility: visible !important;
   pointer-events: none;
 }
@@ -43,4 +42,90 @@
 .About-Background *{
   border: none !important;
   outline: none !important;
+}
+
+.About-Content {
+  position: relative;
+  z-index: 1; 
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 6vh 32px 80px;
+  pointer-events: auto; 
+}
+
+.About-Content-title {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.About-Content-title .fold-text {
+  font-family: 'Iceland', cursive;
+}
+
+.About-Content-Intro {
+  width: 100%;
+  max-width: 750px;
+  margin-top: 10vh; 
+  text-align: justify;
+  align-self: flex-start;
+}
+
+.scroll-reveal-p {
+  display: block;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3em 0.4em; 
+  font-size: clamp(1.5rem, 2.5vw, 1.5rem);
+  line-height: 1.6;
+  color: #fff;
+  font-family: 'Iceland', cursive;
+}
+
+.scroll-reveal-word {
+  position: relative;
+  display: inline-block;
+}
+
+.scroll-reveal-word .word-bg {
+  opacity: 0.15; 
+}
+
+.scroll-reveal-word .word-fg {
+  position: absolute;
+  inset: 0;
+  color: #ffffff; 
+}
+
+@media (max-width: 768px) {
+  .About-Content {
+    padding: 60px 16px;
+    justify-content: flex-start;
+    padding-top: 15vh;
+  }
+
+  .About-Content-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .About-Content-title .fold-text {
+    font-size: clamp(2.5rem, 8vw, 4.75rem) !important; 
+    line-height: 1.1;
+  }
+
+  .About-Content-Intro {
+    margin-top: 15vh;
+    padding: 0 10px;
+  }
+
+  .scroll-reveal-p {
+    gap: 0.2em 0.3em;
+    font-size: 1.4rem; 
+    line-height: 1.4;
+  }
 }

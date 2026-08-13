@@ -10,23 +10,20 @@
   appearance: none;
 }
 
-/* =========================================
-   GLOBALS & SCROLL UNLOCK
-   ========================================= */
 html,
 body,
 #root {
   width: 100%;
-  height: auto !important; /* Critical to unlock scroll */
+  height: auto !important; 
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  display: block !important; /* Kills hidden Vite flex layouts */
+  display: block !important; 
   background: #0a0a0c;
   font-family: 'Iceland', cursive;
   -ms-overflow-style: none;    
   scrollbar-width: none;  
-  overflow-x: hidden; /* <-- Add this line to stop global horizontal scrolling */
+  overflow-x: hidden;
 }
 
 html::-webkit-scrollbar,
@@ -38,7 +35,7 @@ body::-webkit-scrollbar,
 .App {
   position: relative;
   width: 100%;
-  height: auto !important; /* Critical to unlock scroll */
+  height: auto !important; 
   min-height: 100vh;
   overflow: visible !important;
   background: #0a0a0c;
@@ -48,9 +45,6 @@ body::-webkit-scrollbar,
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* =========================================
-   LOADER & BACKGROUND
-   ========================================= */
 .App-Loader {
   position: fixed;
   top: 50%;
@@ -113,7 +107,7 @@ body::-webkit-scrollbar,
   position: absolute !important;
   inset: 0;
   z-index: 0;
-  width: 100%; /* Changed from 100vw to 100% */
+  width: 100%;
   height: 100vh;
   overflow: hidden;
   background: #0a0a0c;
@@ -139,9 +133,6 @@ body::-webkit-scrollbar,
   visibility: visible;
 }
 
-/* =========================================
-   LAYOUT CONTENT
-   ========================================= */
 .Content {
   position: relative;
   z-index: 1;
@@ -204,7 +195,6 @@ body::-webkit-scrollbar,
   margin-top: 50px;
 }
 
-/* 1. Sidebar */
 .Intro-NavBar {
   width: 300px;
   margin: 0;
@@ -225,7 +215,6 @@ body::-webkit-scrollbar,
   font-size: 18px !important;
 }
 
-/* 2. Terminal */
 .Intro-content .Intro-terminal {
   position: relative !important;
   width: 580px;
@@ -240,7 +229,6 @@ body::-webkit-scrollbar,
   transform: none;
 }
 
-/* 3. 3D Logo */
 .Intro-content .Intro-logo-block {
   position: relative;
   width: 480px;
@@ -266,9 +254,6 @@ body::-webkit-scrollbar,
   overflow: visible;
 }
 
-/* =========================================
-   TYPOGRAPHY & GLOBAL RESETS
-   ========================================= */
 .text-type {
   display: inline-block;
   margin: 0;
@@ -426,9 +411,6 @@ body::-webkit-scrollbar,
   box-shadow: none;
 }
 
-/* =========================================
-   SHINY TEXT FIXES
-   ========================================= */
 .App-content span.shiny-text {
   display: inline-block !important;
   font-family: 'Iceland', cursive !important;
@@ -436,21 +418,15 @@ body::-webkit-scrollbar,
   font-weight: 500 !important;
   letter-spacing: 0.05em;
   text-align: center;
-  
-  /* Protects descenders like 'g' from clipping */
   padding-bottom: 0.15em !important; 
   line-height: 1.2 !important; 
-  
   background-image: linear-gradient(120deg, #ffffff 35%, #498995 50%, #ffffff 65%) !important;
   background-size: 200% auto !important;
-
-  
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   color: transparent !important;
   animation: shine 3s linear infinite !important;
-  
   margin: 0;
   border: none !important;
   outline: none !important;
@@ -483,9 +459,6 @@ body::-webkit-scrollbar,
   box-shadow: none !important;
 }
 
-/* =========================================
-   TERMINAL STYLES
-   ========================================= */
 .Intro-terminal .terminal-container {
   display: flex !important;
   flex-direction: column !important;
@@ -672,29 +645,22 @@ body::-webkit-scrollbar,
   50.01%, 100% { opacity: 0; }
 }
 
-/* =========================================
-   PAGES STACKING FIX & BORDER REMOVAL
-   ========================================= */
 .Pages {
   position: relative;
   z-index: 1;
   width: 100%;
   display: flex;
   flex-direction: column;
-  
-  /* Add these lines to hide initially and animate in */
   opacity: 0;
   transform: translateY(6px);
   transition: opacity 0.55s ease 0.2s, transform 0.55s ease 0.2s;
 }
 
-/* Add this rule to fade the pages in when the loader is done */
 .App-Loader.loaded ~ .Pages {
   opacity: 1;
   transform: none !important;
 }
 
-/* Add this to forcefully remove any inherited global borders inside the pages section */
 .Pages * {
   border: none !important;
   outline: none !important;
@@ -725,16 +691,14 @@ body::-webkit-scrollbar,
   outline: none !important;
 }
 
-
-/* =========================================
-   MOBILE LAYOUT
-   ========================================= */
 @media (max-width: 640px) {
   .Intro-content {
-    top: 64px;
-    left: 16px;
-    width: calc(100% - 32px);
-    max-width: calc(100% - 32px);
+    position: relative !important; 
+    top: 0 !important;
+    left: 0 !important;
+    padding: 64px 16px 40px; 
+    width: 100%;
+    max-width: 100%;
     gap: 16px;
   }
 
@@ -752,37 +716,38 @@ body::-webkit-scrollbar,
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    gap: 32px;
+    gap: 48px;
     margin-top: 32px;
   }
 
   .Intro-NavBar {
-    width: auto;
+    width: 100%;
   }
 
   .Intro-content .Intro-terminal {
-    width: min(540px, calc(100vw - 32px));
-    margin: 0 auto !important; /* Centers the wrapper using auto margins */
-    align-self: center; /* Overrides the parent's flex-start to force centering */
+    width: 100%;
+    max-width: calc(100vw - 32px);
+    margin: 0 auto !important; 
+    align-self: center; 
   }
 
   .Intro-terminal .terminal-container {
-    width: 100% !important; /* Allows the terminal to shrink on smaller phones */
-    max-width: 540px !important; /* Caps the maximum width */
+    width: 100% !important; 
+    max-width: 100% !important; 
   }
 
   .Intro-content .Intro-logo-block {
     width: min(280px, calc(100vw - 32px));
     height: min(280px, calc(100vw - 32px));
-    margin: 40px auto !important; /* Centers it horizontally and balances vertical space */
-    align-self: center; /* Forces it to the middle of the flex column */
-    border: none !important; /* Forces the stray line to disappear */
+    margin: 20px auto 40px !important; 
+    align-self: center; 
+    border: none !important; 
     outline: none !important; 
   }
 
   .Intro-end {
-    margin-top: 40px;
-    padding-bottom: 20px;
+    margin-top: 20px;
+    padding-bottom: 40px;
   }
 }
 
@@ -798,6 +763,7 @@ html.lenis, html.lenis body {
 .lenis.lenis-stopped {
   overflow: hidden;
 }
+
 
 
 App.jsx:
@@ -883,7 +849,7 @@ function App() {
               typingSpeed={45}
               pauseDuration={2000}
               showCursor={true}
-              cursorCharacter="^"
+              cursorCharacter=" >"
               deletingSpeed={50}
               variableSpeedEnabled={false}
               variableSpeedMin={60}
@@ -916,7 +882,7 @@ function App() {
                   markerColor="#ffffff"
                   showIndex ={false}
                   showMarker ={true}
-                  proximityRadius={100}
+                  proximityRadius={80}
                   maxShift={50}
                   falloff="smooth"
                   markerLength={40}

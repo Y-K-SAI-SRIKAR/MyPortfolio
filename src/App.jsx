@@ -67,7 +67,7 @@ function App() {
         <Silk
           speed={8.5}
           scale={1}
-          color="#18181f"
+          color="#1c1c1e"
           noiseIntensity={1.2}
           rotation={0.45}
         />
@@ -80,7 +80,7 @@ function App() {
               typingSpeed={45}
               pauseDuration={2000}
               showCursor={true}
-              cursorCharacter="^"
+              cursorCharacter=" >"
               deletingSpeed={50}
               variableSpeedEnabled={false}
               variableSpeedMin={60}
