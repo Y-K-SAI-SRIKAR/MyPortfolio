@@ -16,8 +16,6 @@ import {
   CardCurtainRevealTitle,
   CardCurtain
 } from "../components/CurtainReveal";
-import { ArrowUpRight } from "lucide-react"
-import { Button } from "../tcomp/ui/button"
 
 function About(){
     const IntroPara = `I'm fascinated by how intelligent systems work and why they matter. 
@@ -29,6 +27,11 @@ function About(){
     I'm driven by work that transforms theory into tangible impact.
     Beyond code, I explore discipline, and vedic philosophy to understand decision-making and resilience. 
     Gardening and music keep me grounded.`;
+
+    const ExpPara = `While I lack formal corporate experience, I've pursued hands-on GenAI and ML work through multiple project initiatives. 
+    I've built ML pipelines, optimized LLM-powered services for production, and deployed real-time AI systems at scale. 
+    These experiences taught me inference optimization and cross-team collaboration—skills that translate directly to professional environments. 
+    Ready to contribute to GenAI & ML systems and grow within a structured team.`;
 
     useEffect(() => {
     const lenis = new Lenis({
@@ -119,7 +122,7 @@ function About(){
                 <div className="About-Content-Footer">
                     <div className="About-Content-Footer-Education">
                         <BottomUpLetters triggerOnView={true}>
-                            My Education
+                            Knowledge Arsenal
                         </BottomUpLetters>
                     </div>
                     <AnimatedContent
@@ -138,22 +141,19 @@ function About(){
                         <CardCurtainReveal className="UG-Card">
                             <CardCurtainRevealBody className="UG">
                             <CardCurtainRevealTitle className="B-Tech-card">
-                                Behind <br />
-                                the Curtain
+                                UG <br />
+                                B.Tech
+                                <span className="hover-me-text">(Hover Me)</span>
                             </CardCurtainRevealTitle>
                             <CardCurtainRevealDescription className="B-Tech-Desc">
                                 <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Accusantium voluptate, eum quia temporibus fugiat rerum nobis modi
-                                dolor, delectus laboriosam, quae adipisci reprehenderit officiis
-                                quidem iure ducimus incidunt officia. Magni, eligendi repellendus.
-                                Fugiat, natus aut?
+                                In AI & Data Science with a CGPA of 9.07, 
+                                developing expertise in GenAi & ML frameworks,full-stack backend engineering, 
+                                and cloud infrastructure optimization through production-grade systems.
                                 </p>
                             </CardCurtainRevealDescription>
-
                             <CardCurtain className="B-Tech" />
                             </CardCurtainRevealBody>
-
                             <CardCurtainRevealFooter className="mt-auto">
                             <div className="B-Tech-College">
                                 <h3> @ K L University</h3>
@@ -163,22 +163,19 @@ function About(){
                         <CardCurtainReveal className="Inter-Card">
                             <CardCurtainRevealBody className="IM">
                             <CardCurtainRevealTitle className="InterMediate-card">
-                                Behind <br />
-                                the Curtain
+                                +2 <br />
+                                InterMediate
+                                <span className="hover-me-text">(Hover Me)</span>
                             </CardCurtainRevealTitle>
                             <CardCurtainRevealDescription className="Inter-Desc">
                                 <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Accusantium voluptate, eum quia temporibus fugiat rerum nobis modi
-                                dolor, delectus laboriosam, quae adipisci reprehenderit officiis
-                                quidem iure ducimus incidunt officia. Magni, eligendi repellendus.
-                                Fugiat, natus aut?
+                                Completed MPC studies with a grade of 94.5, 
+                                built analytical and mathematical foundations in physics, chemistry, and mathematics 
+                                that cultivated problem solving rigor essential for computer science.
                                 </p>
                             </CardCurtainRevealDescription>
-
                             <CardCurtain className="Inter" />
                             </CardCurtainRevealBody>
-
                             <CardCurtainRevealFooter className="mt-auto">
                             <div className="Inter-College">
                                 <h3> @ Bhahsyam Jr College</h3>
@@ -188,21 +185,19 @@ function About(){
                         <CardCurtainReveal className="SSC-card">
                             <CardCurtainRevealBody className="SSC">
                             <CardCurtainRevealTitle className="Tenth-card">
-                                Behind <br />
-                                the Curtain
+                                SSC <br />
+                                Tenth Class
+                                <span className="hover-me-text">(Hover Me)</span>
                             </CardCurtainRevealTitle>
                             <CardCurtainRevealDescription className="Tenth-Desc">
                                 <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Accusantium voluptate, eum quia temporibus fugiat rerum nobis modi
-                                dolor, delectus laboriosam, quae adipisci reprehenderit officiis
-                                quidem iure ducimus incidunt officia. Magni, eligendi repellendus.
-                                Fugiat, natus aut?
+                                Completed SSC studies with a grade of 96.1 and 
+                                earned the Silver Medal for academic excellence. 
+                                During this period, served as an active NCC cadet, developing discipline, leadership, and community engagement.
                                 </p>
                             </CardCurtainRevealDescription>
                             <CardCurtain className="Tenth" />
                             </CardCurtainRevealBody>
-
                             <CardCurtainRevealFooter className="mt-auto">
                             <div className="SSC-School">
                                 <h3> @ B V M High School</h3>
@@ -210,7 +205,18 @@ function About(){
                             </CardCurtainRevealFooter>
                         </CardCurtainReveal>
                     </div>
-                    </AnimatedContent>   
+                    </AnimatedContent> 
+                    <div className="About-Content-Footer-Experience">
+                        <BottomUpLetters triggerOnView={true}>
+                            Code in Action
+                        </BottomUpLetters>
+                    </div>
+                    <div className="Experience-Text">
+                        <ScrollRevealParagraph
+                            className="text-foreground"
+                            paragraph={ExpPara}
+                        />
+                    </div>  
                 </div>
             </section>
         </section>

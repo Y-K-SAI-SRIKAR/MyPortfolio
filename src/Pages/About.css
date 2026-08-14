@@ -157,11 +157,12 @@
 }
 
 .Education-Cards-Container > div {
-  width: 350px; 
+  width: 360px; 
   height: 400px; 
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 16px;
+  padding-bottom: 15px;
 }
 
 .Education-Cards-Container * {
@@ -176,6 +177,8 @@
   text-align-last: center; 
   line-height: 1.6;
   padding: 0 10px;
+  margin-top: 15px;
+  font-size: 1.15rem;
 }
 
 .Education-Cards-Container h2,
@@ -184,6 +187,47 @@
   text-align: center;
   width: 100%;
   display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: center;
+}
+
+.hover-me-text {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.45) !important; 
+  margin-top: 14px;
+  letter-spacing: 1px;
+  font-weight: normal;
+  transition: opacity 0.3s ease;
+}
+
+.Education-Cards-Container > div:hover .hover-me-text {
+  opacity: 0; 
+  pointer-events: none;
+}
+
+.About-Content-Footer-Experience {
+  font-family: 'Iceland', cursive;
+  font-size: clamp(3rem, 5vw, 4.5rem); 
+  color: #e6ebeb;
+  letter-spacing: 0.02em;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15vh; 
+}
+
+.Experience-Text {
+  width: 100%;
+  max-width: 1275px; 
+  margin-top: 7vh;
+  display: flex;
+  justify-content: center;
+}
+
+.Experience-Text .scroll-reveal-p {
+  text-align: center; 
   justify-content: center;
 }
 
@@ -244,6 +288,17 @@
   .Education-Cards-Container > div {
     width: 100%;
     max-width: 340px; 
-    height: 350px;
+    height: 320px; 
+  }
+
+  .About-Content-Footer-Experience {
+    font-size: clamp(2.5rem, 8vw, 3.5rem); 
+    margin-top: 10vh;
+  }
+
+  .Experience-Text {
+    max-width: 100%;
+    padding: 0 10px;
+    margin-top: 5vh;
   }
 }
