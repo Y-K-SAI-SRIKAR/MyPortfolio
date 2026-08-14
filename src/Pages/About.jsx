@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import Lenis from "lenis";
 import './About.css'
+import  myImg from "../assets/5.jpg" ;
 import Silk from "../components/Silk"
 import FoldText from "../components/FoldText";
-import ScrollRevealParagraph from "../components/ScrollRevealParagraph"
+import ScrollRevealParagraph from "../components/ScrollRevealParagraph";
+import InteractiveParticles from "../components/InteractiveParticles";
+import AnimatedContent from "../components/AnimatedContent";
 
 function About(){
     const IntroPara = `I'm fascinated by how intelligent systems work and why they matter. 
@@ -56,7 +59,7 @@ function About(){
                         hinge="top"
                         trigger="scroll"
                         duration={0.75}
-                        stagger={0.05}
+                        stagger={0.045}
                         ease="power3.out"
                         perspective={700}
                         creaseShading={0.55}
@@ -65,11 +68,42 @@ function About(){
                         color="#e6ebeb"
                     />
                 </div>
-                <div className="About-Content-Intro">
-                    <ScrollRevealParagraph
-                        className="text-foreground"
-                        paragraph={IntroPara}
-                    />
+                <div className="About-Content-Body">
+                    <AnimatedContent
+                        distance={50}
+                        direction="vertical"
+                        reverse={false}
+                        duration={2}
+                        ease="power3.out"
+                        initialOpacity={0}
+                        animateOpacity
+                        scale={1}
+                        threshold={0.1}
+                        delay={0}
+                    >
+                    <div className="About-Content-Intro">
+                        <ScrollRevealParagraph
+                            className="text-foreground"
+                            paragraph={IntroPara}
+                        />
+                    </div>
+                    </AnimatedContent>
+                    <AnimatedContent
+                        distance={50}
+                        direction="horizontal"
+                        reverse={false}
+                        duration={2}
+                        ease="power3.out"
+                        initialOpacity={0}
+                        animateOpacity
+                        scale={1}
+                        threshold={0.1}
+                        delay={0.5}
+                    >
+                    <div className="About-content-Image">
+                        <InteractiveParticles src={myImg} background="transparent" threshold={2.5}/>
+                    </div>
+                    </AnimatedContent>
                 </div>
             </section>
         </section>

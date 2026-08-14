@@ -114,14 +114,14 @@ function App() {
                   showIndex ={false}
                   showMarker ={true}
                   proximityRadius={80}
-                  maxShift={50}
+                  maxShift={35}
                   falloff="smooth"
                   markerLength={40}
                   markerGap={1}
                   tickScale={0.5}
                   scaleTick ={true}
-                  itemGap={20}
-                  fontSize={1.50}
+                  itemGap={18}
+                  fontSize={1.65}
                   smoothing={250}
                   defaultActive={null}
                   onItemClick={(index, label) => console.log(index, label)}
