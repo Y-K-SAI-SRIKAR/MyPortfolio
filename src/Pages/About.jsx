@@ -7,6 +7,17 @@ import FoldText from "../components/FoldText";
 import ScrollRevealParagraph from "../components/ScrollRevealParagraph";
 import InteractiveParticles from "../components/InteractiveParticles";
 import AnimatedContent from "../components/AnimatedContent";
+import BottomUpLetters from "../components/BottumUpLetters";
+import {
+    CardCurtainReveal,
+  CardCurtainRevealBody,
+  CardCurtainRevealDescription,
+  CardCurtainRevealFooter,
+  CardCurtainRevealTitle,
+  CardCurtain
+} from "../components/CurtainReveal";
+import { ArrowUpRight } from "lucide-react"
+import { Button } from "../tcomp/ui/button"
 
 function About(){
     const IntroPara = `I'm fascinated by how intelligent systems work and why they matter. 
@@ -104,6 +115,102 @@ function About(){
                         <InteractiveParticles src={myImg} background="transparent" threshold={2.5}/>
                     </div>
                     </AnimatedContent>
+                </div>
+                <div className="About-Content-Footer">
+                    <div className="About-Content-Footer-Education">
+                        <BottomUpLetters triggerOnView={true}>
+                            My Education
+                        </BottomUpLetters>
+                    </div>
+                    <AnimatedContent
+                        distance={50}
+                        direction="horizontal"
+                        reverse={false}
+                        duration={2}
+                        ease="power3.out"
+                        initialOpacity={0}
+                        animateOpacity
+                        scale={1}
+                        threshold={0.1}
+                        delay={0.5}
+                    >
+                    <div className="Education-Cards-Container">
+                        <CardCurtainReveal className="UG-Card">
+                            <CardCurtainRevealBody className="UG">
+                            <CardCurtainRevealTitle className="B-Tech-card">
+                                Behind <br />
+                                the Curtain
+                            </CardCurtainRevealTitle>
+                            <CardCurtainRevealDescription className="B-Tech-Desc">
+                                <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Accusantium voluptate, eum quia temporibus fugiat rerum nobis modi
+                                dolor, delectus laboriosam, quae adipisci reprehenderit officiis
+                                quidem iure ducimus incidunt officia. Magni, eligendi repellendus.
+                                Fugiat, natus aut?
+                                </p>
+                            </CardCurtainRevealDescription>
+
+                            <CardCurtain className="B-Tech" />
+                            </CardCurtainRevealBody>
+
+                            <CardCurtainRevealFooter className="mt-auto">
+                            <div className="B-Tech-College">
+                                <h3> @ K L University</h3>
+                            </div>
+                            </CardCurtainRevealFooter>
+                        </CardCurtainReveal>
+                        <CardCurtainReveal className="Inter-Card">
+                            <CardCurtainRevealBody className="IM">
+                            <CardCurtainRevealTitle className="InterMediate-card">
+                                Behind <br />
+                                the Curtain
+                            </CardCurtainRevealTitle>
+                            <CardCurtainRevealDescription className="Inter-Desc">
+                                <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Accusantium voluptate, eum quia temporibus fugiat rerum nobis modi
+                                dolor, delectus laboriosam, quae adipisci reprehenderit officiis
+                                quidem iure ducimus incidunt officia. Magni, eligendi repellendus.
+                                Fugiat, natus aut?
+                                </p>
+                            </CardCurtainRevealDescription>
+
+                            <CardCurtain className="Inter" />
+                            </CardCurtainRevealBody>
+
+                            <CardCurtainRevealFooter className="mt-auto">
+                            <div className="Inter-College">
+                                <h3> @ Bhahsyam Jr College</h3>
+                            </div>
+                            </CardCurtainRevealFooter>
+                        </CardCurtainReveal>
+                        <CardCurtainReveal className="SSC-card">
+                            <CardCurtainRevealBody className="SSC">
+                            <CardCurtainRevealTitle className="Tenth-card">
+                                Behind <br />
+                                the Curtain
+                            </CardCurtainRevealTitle>
+                            <CardCurtainRevealDescription className="Tenth-Desc">
+                                <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Accusantium voluptate, eum quia temporibus fugiat rerum nobis modi
+                                dolor, delectus laboriosam, quae adipisci reprehenderit officiis
+                                quidem iure ducimus incidunt officia. Magni, eligendi repellendus.
+                                Fugiat, natus aut?
+                                </p>
+                            </CardCurtainRevealDescription>
+                            <CardCurtain className="Tenth" />
+                            </CardCurtainRevealBody>
+
+                            <CardCurtainRevealFooter className="mt-auto">
+                            <div className="SSC-School">
+                                <h3> @ B V M High School</h3>
+                            </div>
+                            </CardCurtainRevealFooter>
+                        </CardCurtainReveal>
+                    </div>
+                    </AnimatedContent>   
                 </div>
             </section>
         </section>

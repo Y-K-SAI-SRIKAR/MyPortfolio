@@ -126,6 +126,67 @@
   overflow: hidden;
 }
 
+.About-Content-Footer {
+  width: 100%;
+  max-width: 1325px;
+  margin-top: 8vh; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+}
+
+.About-Content-Footer-Education {
+  font-family: 'Iceland', cursive;
+  font-size: clamp(3rem, 5vw, 4.5rem); 
+  color: #e6ebeb;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.Education-Cards-Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 135px;
+  width: 100%;
+  margin-top: 12vh;
+  position: relative;
+  z-index: 20; 
+}
+
+.Education-Cards-Container > div {
+  width: 350px; 
+  height: 400px; 
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px;
+}
+
+.Education-Cards-Container * {
+  font-family: 'Iceland', cursive !important;
+  color: #ffffff !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.Education-Cards-Container p {
+  text-align: center;
+  text-align-last: center; 
+  line-height: 1.6;
+  padding: 0 10px;
+}
+
+.Education-Cards-Container h2,
+.Education-Cards-Container h3,
+.Education-Cards-Container h4 {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 768px) {
   .About-Content {
     padding: 60px 16px;
@@ -164,5 +225,25 @@
     gap: 0.2em 0.3em;
     font-size: 1.4rem; 
     line-height: 1.4;
+  }
+
+  .About-Content-Footer {
+    margin-top: 10vh; 
+  }
+
+  .About-Content-Footer-Education {
+    font-size: clamp(2.5rem, 8vw, 3.5rem); 
+  }
+
+  .Education-Cards-Container {
+    flex-direction: column; 
+    gap: 30px;
+    margin-top: 4vh;
+  }
+
+  .Education-Cards-Container > div {
+    width: 100%;
+    max-width: 340px; 
+    height: 350px;
   }
 }
