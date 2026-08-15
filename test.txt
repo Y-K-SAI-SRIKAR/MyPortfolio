@@ -167,8 +167,8 @@ body::-webkit-scrollbar,
 
 .Intro-content {
   position: absolute;
-  top: 55px;
-  left: 32px;
+  top: 45px;
+  left: 28px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -188,9 +188,9 @@ body::-webkit-scrollbar,
 
 .Intro-bottom-row {
   display: grid;
-  grid-template-columns: 300px 560px 480px;
+  grid-template-columns: 300px 560px 430px;
   align-items: center;
-  column-gap: clamp(100px, 6vw, 90px);
+  column-gap: clamp(90px, 3vw, 60px);
   width: max-content;
   margin-top: 50px;
 }
@@ -217,7 +217,7 @@ body::-webkit-scrollbar,
 
 .Intro-content .Intro-terminal {
   position: relative !important;
-  width: 580px;
+  width: 560px;
   margin: 0 !important;
   overflow: visible;
   pointer-events: auto;
@@ -233,6 +233,7 @@ body::-webkit-scrollbar,
   position: relative;
   width: 480px;
   height: 480px;
+  transform: translateX(-30px);
   margin: 0;
   overflow: visible;
   pointer-events: auto;
@@ -444,8 +445,9 @@ body::-webkit-scrollbar,
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px; 
-  padding-bottom: 20px; 
+  margin-top: 0px; 
+  transform: translateY(-25px);
+  padding-bottom: 40px; 
   position: relative;
   z-index: 100;
 }
@@ -746,7 +748,8 @@ body::-webkit-scrollbar,
   }
 
   .Intro-end {
-    margin-top: 20px;
+    margin-top: 0px;
+    transform: translateY(-30px);
     padding-bottom: 40px;
   }
 }
@@ -763,8 +766,6 @@ html.lenis, html.lenis body {
 .lenis.lenis-stopped {
   overflow: hidden;
 }
-
-
 
 App.jsx:
 import { useEffect, useState } from "react";
@@ -795,7 +796,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1300); 
+    }, 1350); 
 
     return () => clearTimeout(timer);
   }, []);
@@ -883,14 +884,14 @@ function App() {
                   showIndex ={false}
                   showMarker ={true}
                   proximityRadius={80}
-                  maxShift={50}
+                  maxShift={35}
                   falloff="smooth"
                   markerLength={40}
                   markerGap={1}
                   tickScale={0.5}
                   scaleTick ={true}
-                  itemGap={20}
-                  fontSize={1.50}
+                  itemGap={18}
+                  fontSize={1.65}
                   smoothing={250}
                   defaultActive={null}
                   onItemClick={(index, label) => console.log(index, label)}
