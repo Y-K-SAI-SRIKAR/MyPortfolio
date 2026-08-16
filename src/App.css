@@ -233,7 +233,7 @@ body::-webkit-scrollbar,
   position: relative;
   width: 480px;
   height: 480px;
-  transform: translateX(-30px);
+  transform: translateX(-10px);
   margin: 0;
   overflow: visible;
   pointer-events: auto;
@@ -446,8 +446,8 @@ body::-webkit-scrollbar,
   justify-content: center;
   align-items: center;
   margin-top: 0px; 
-  transform: translateY(-25px);
-  padding-bottom: 40px; 
+  transform: translateY(-10px);
+  padding-bottom: 15px; 
   position: relative;
   z-index: 100;
 }
