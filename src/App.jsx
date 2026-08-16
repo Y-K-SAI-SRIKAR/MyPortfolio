@@ -10,7 +10,7 @@ import LineSidebar from "./components/LineSidebar";
 import ShinyText from "./components/ShinyText";
 import About from "./Pages/About";
 import Connect from "./Pages/Connect";
-import Acheive from "./Pages/Acheive";
+import Achieve from "./Pages/Achieve";
 import ExtraCurr from "./Pages/ExtraCurr";
 import Hobbies from "./Pages/Hobbies";
 import Projects from "./Pages/Projects";
@@ -171,7 +171,7 @@ function App() {
         <div id="page-1"><Skills/></div>
         <div id="page-2"><Projects/></div>
         <div id="page-3"><ExtraCurr/></div>
-        <div id="page-4"><Acheive/></div>
+        <div id="page-4"><Achieve/></div>
         <div id="page-5"><Hobbies/></div>
         <div id="page-6"><Connect/></div>
       </section>

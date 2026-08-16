@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import Lenis from 'lenis';
-import './Projects.css';
+import './Achieve.css';
+import Lenis from "lenis";
 import Silk from '../components/Silk';
 import FoldText from "../components/FoldText";
 
-function Projects(){
+
+function Achieve(){
 
     useEffect(() => {
     const lenis = new Lenis({
@@ -27,9 +28,9 @@ function Projects(){
     };
     }, []);
 
-    return (
-        <section className="Projects">
-            <div className="Projects-Background">
+    return(
+        <section className="Achieve">
+            <div className="Achieve-Background">
                 <Silk
                     speed={8.5}
                     scale={1}
@@ -38,10 +39,10 @@ function Projects(){
                     rotation={0.45}
                 />
             </div>
-            <section className="Projects-Content">
-                <div className="Projects-Content-Title">
+            <section className="Achieve-Content">
+                <div className="Achieve-Content-Title">
                     <FoldText
-                        text="Code Showcase"
+                        text="Moments of Glory"
                         splitBy="char"
                         hinge="top"
                         trigger="scroll"
@@ -55,11 +56,10 @@ function Projects(){
                         color="#e6ebeb"
                     />
                 </div>
-                <div className="Projects-Content-Body">
+                <div className="Achieve-Content-Body">
                 </div>
             </section>
         </section>
     )
 }
-
-export default Projects;
+export default Achieve;

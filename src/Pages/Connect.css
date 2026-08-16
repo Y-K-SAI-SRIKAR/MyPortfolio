@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.Connect {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: transparent;
+  color: #fff;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.Connect-Background {
+  position: absolute !important; 
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%; 
+  background: transparent !important;
+  opacity: 1 !important; 
+  visibility: visible !important;
+  pointer-events: none;
+}
+
+.Connect *{
+  border: none !important;
+  outline: none !important;
+}
+
+.Connect-Background *{
+  border: none !important;
+  outline: none !important;
+}

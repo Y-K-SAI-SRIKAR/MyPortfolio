@@ -10,7 +10,7 @@
   appearance: none;
 }
 
-.ExtraCurr {
+.Achieve {
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -21,7 +21,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ExtraCurr-Background {
+.Achieve-Background {
   position: absolute !important; 
   top: 0;
   left: 0;
@@ -34,22 +34,22 @@
   pointer-events: none;
 }
 
-.ExtraCurr *{
-    border: none !important;
-    outline: none !important;
-}
-
-.ExtraCurr-Background *{
-    border: none !important;
-    outline: none !important;
-}
-
-.ExtraCurr-Content *{
+.Achieve *{
   border: none !important;
   outline: none !important;
 }
 
-.ExtraCurr-Content {
+.Achieve-Background *{
+  border: none !important;
+  outline: none !important;
+}
+
+.Achieve-Content *{
+  border: none !important;
+  outline: none !important;
+}
+
+.Achieve-Content {
   position: relative;
   z-index: 1; 
   width: 100%;
@@ -62,7 +62,7 @@
   pointer-events: auto; 
 }
 
-.ExtraCurr-Content-Title {
+.Achieve-Content-Title {
   width: 100%;
   max-width: 1200px;
   display: flex;
@@ -71,21 +71,21 @@
   margin-bottom: 2rem;
 }
 
-.ExtraCurr-Content-title .fold-text {
+.Achieve-Content-title .fold-text {
   font-family: 'Iceland', cursive;
 }
 
 @media (max-width: 768px) {
-  .ExtraCurr-Content {
+  .Achieve-Content {
     padding: 60px 16px;
     padding-top: 15vh;
   }
 
-  .ExtraCurr-Content-Title {
+  .Achieve-Content-Title {
     margin-bottom: 1.5rem;
   }
 
-  .ExtraCurr-title .fold-text {
+  .Achieve-Content-title .fold-text {
     font-size: clamp(2.5rem, 8vw, 4.75rem) !important; 
     line-height: 1.1;
   }
