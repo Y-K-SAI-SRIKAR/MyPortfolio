@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import Lenis from 'lenis';
 import './Connect.css';
-import Silk from '../components/Silk';
+import limg from '../assets/limg.jpg';
+import rimg from '../assets/rimg.jpg';
+import PixelSnow from "../components/PixelSnow";
+import AnimatedFooter from "../components/AnimatedFooter";
+import AnimatedContent from "../components/AnimatedContent";
 
 
 function Connect(){
@@ -30,15 +34,32 @@ function Connect(){
     return (
         <section className="Connect">
             <div className="Connect-Background">
-                <Silk
-                    speed={8.5}
-                    scale={1}
-                    color="#1c1c1e"
-                    noiseIntensity={1.2}
-                    rotation={0.45}
+                <PixelSnow 
+                    color="#a89e9e"
+                    flakeSize={0.005}
+                    minFlakeSize={1.25}
+                    pixelResolution={440}
+                    speed={1.5}
+                    density={0.45}
+                    direction={125}
+                    brightness={1}
+                    depthFade={17}
+                    farPlane={30}
+                    gamma={0.4545}
+                    variant="snowflake"
                 />
             </div>
             <section className="Connect-Content">
+                <div className="Connect-Content-Top">
+                    <div className="relative h-[600px] w-full overflow-hidden rounded-xl">
+                        <AnimatedFooter
+                            headingLines={["You Know Me Now !"]}
+                            leftImage={limg}
+                            rightImage={rimg}
+                            background="transparent"
+                        />
+                    </div>
+                </div>
             </section>
         </section>
     )

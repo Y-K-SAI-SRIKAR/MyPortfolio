@@ -32,7 +32,7 @@ function Hobbies(){
             <div className="Hobbies-Background">
                 <PixelSnow 
                     color="#ffffff"
-                    flakeSize={0.009}
+                    flakeSize={0.005}
                     minFlakeSize={1.25}
                     pixelResolution={440}
                     speed={2}
