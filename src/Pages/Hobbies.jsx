@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Lenis from 'lenis';
 import './Hobbies.css';
-import PixelSnow from "../components/PixelSnow";
+import Silk from '../components/Silk';
 import FoldText from "../components/FoldText";
 
 function Hobbies(){
@@ -30,19 +30,12 @@ function Hobbies(){
     return (
         <section className="Hobbies">
             <div className="Hobbies-Background">
-                <PixelSnow 
-                    color="#ffffff"
-                    flakeSize={0.005}
-                    minFlakeSize={1.25}
-                    pixelResolution={440}
-                    speed={2}
-                    density={0.45}
-                    direction={125}
-                    brightness={1}
-                    depthFade={17}
-                    farPlane={30}
-                    gamma={0.4545}
-                    variant="snowflake"
+                <Silk
+                    speed={8.5}
+                    scale={1}
+                    color="#1c1c1e"
+                    noiseIntensity={1.2}
+                    rotation={0.45}
                 />
             </div>
             <section className="Hobbies-Content">

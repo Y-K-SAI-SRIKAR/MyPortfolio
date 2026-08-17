@@ -1,11 +1,7 @@
 import { useState, useEffect } from "react";
 import Lenis from 'lenis';
 import './Connect.css';
-import limg from '../assets/limg.jpg';
-import rimg from '../assets/rimg.jpg';
 import PixelSnow from "../components/PixelSnow";
-import AnimatedFooter from "../components/AnimatedFooter";
-import AnimatedContent from "../components/AnimatedContent";
 
 
 function Connect(){
@@ -50,16 +46,6 @@ function Connect(){
                 />
             </div>
             <section className="Connect-Content">
-                <div className="Connect-Content-Top">
-                    <div className="relative h-[600px] w-full overflow-hidden rounded-xl">
-                        <AnimatedFooter
-                            headingLines={["You Know Me Now !"]}
-                            leftImage={limg}
-                            rightImage={rimg}
-                            background="transparent"
-                        />
-                    </div>
-                </div>
             </section>
         </section>
     )
