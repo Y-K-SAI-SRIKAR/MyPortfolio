@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import Lenis from 'lenis';
 import './Connect.css';
+import Img from '../assets/9.jpg'
 import PixelSnow from "../components/PixelSnow";
+import DitherReveal from "../components/DitherReveal";
+import AnimatedContent from "../components/AnimatedContent";
 
 
 function Connect(){
@@ -31,11 +34,11 @@ function Connect(){
         <section className="Connect">
             <div className="Connect-Background">
                 <PixelSnow 
-                    color="#a89e9e"
-                    flakeSize={0.005}
+                    color="#eeeaea"
+                    flakeSize={0.004}
                     minFlakeSize={1.25}
                     pixelResolution={440}
-                    speed={1.5}
+                    speed={1}
                     density={0.45}
                     direction={125}
                     brightness={1}
@@ -46,6 +49,25 @@ function Connect(){
                 />
             </div>
             <section className="Connect-Content">
+                <AnimatedContent
+                        distance={50}
+                        direction="vertical"
+                        reverse={false}
+                        duration={2}
+                        ease="power3.out"
+                        initialOpacity={0}
+                        animateOpacity
+                        scale={1}
+                        threshold={0.1}
+                        delay={0.65}
+                    >
+                <div className="Connect-Content-Image">
+                    <DitherReveal
+                        image = {Img}
+                        focusY = {13}
+                    />
+                </div>
+                </AnimatedContent>
             </section>
         </section>
     )

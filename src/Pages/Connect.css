@@ -12,6 +12,7 @@
 
 .Connect {
   position: relative;
+  z-index: 0; 
   width: 100%;
   min-height: 100vh;
   background: transparent;
@@ -25,7 +26,7 @@
   position: absolute !important; 
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: -1;
   width: 100%;
   height: 100%; 
   background: transparent !important;
@@ -36,16 +37,24 @@
 
 .Connect-Content {
   position: relative;
-  z-index: 1; 
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center; 
+  align-items: flex-start; 
+  padding-left: 5%; 
+  padding-top: 10px;
 }
 
-.Connect-Content-Top {
+.Connect-Content-Image {
+  position: relative;
   width: 100%;
-  height: 100vh; 
+  max-width: 450px; 
+  height: 70vh; 
+  border-radius: 20px;
+  overflow: hidden; 
+  background: transparent;
 }
 
 .Connect *{
