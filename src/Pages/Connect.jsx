@@ -1,16 +1,28 @@
 import { useState, useEffect } from "react";
 import Lenis from 'lenis';
 import './Connect.css';
+import { useNavigate } from 'react-router-dom';
+import * as Icons from 'react-icons/vsc';
+import * as IC from 'react-icons/fa';
 import Img from '../assets/9.jpg'
 import PixelSnow from "../components/PixelSnow";
 import DitherReveal from "../components/DitherReveal";
 import AnimatedContent from "../components/AnimatedContent";
 import FoldText from "../components/FoldText";
 import BottomUpLetters from "../components/BottumUpLetters";
-import GlassDock from "../components/GlassDock";
+import Dock from "../components/Dock";
 
 
 function Connect(){
+
+    const items = [
+    { icon: <Icons.VscMail size={18} />, label: 'Mail', onClick: () => window.location.href='/your-href-path' },
+    { icon: <IC.FaLinkedin size={18} />, label: 'LinkedIn', onClick: () => window.location.href='/your-href-path' },
+    { icon: <Icons.VscGithub size={18} />, label: 'GitHub', onClick: () =>window.location.href='/your-href-path' },
+    { icon: <IC.FaDocker size={18} />, label: 'DockerHub', onClick: () => window.location.href='/your-href-path' },
+    { icon: <IC.FaInstagram size={18} />, label: 'Instagram', onClick: () => window.location.href='instagram.com/nexvitals' },
+    { icon: <IC.FaBlogger size={18} />, label: 'Blog', onClick: () => window.location.href='/your-href-path'}
+  ];
 
     useEffect(() => {
     const lenis = new Lenis({
@@ -94,14 +106,11 @@ function Connect(){
                         </BottomUpLetters>
                     </div>
                     <div className="Connect-Content-Dock">
-                        <GlassDock
-                            items={[
-                                { icon: "email", title: "Email", href: "" },
-                                { icon: "linkedin", title: "LinkedIn", href: "" },
-                                { icon: "dockerhub", title: "DockerHub", href:"" },
-                                { icon: "instagram", title: "Instagram", href:"" },
-                                { icon: "blog", title: "Blog", href:"" },
-                            ]}
+                        <Dock 
+                            items={items}
+                            panelHeight={68}
+                            baseItemSize={50}
+                            magnification={70}
                         />
                     </div>
                 </div>
@@ -110,10 +119,3 @@ function Connect(){
     )
 }
 export default Connect;
-
-/*<GlassDock
-      items={[
-        { icon: "home", title: "Home", href: "/" },
-        { icon: "settings", title: "Settings", href: "/settings" },
-      ]}
-    />*/

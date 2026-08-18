@@ -64,18 +64,22 @@
   justify-content: center;
   align-items: center;
   width: 50%; 
-  transform: translateY(-180px); 
+  transform: translateY(0); 
   margin-left: 8%;
+  padding-bottom: 0;
 }
 
 .Connect-Content-TitleA {
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
+  padding-right: 20px;
 }
 
 .Connect-Content-TitleB {
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -84,39 +88,31 @@
   color: #d6d6d8;
   letter-spacing: 0.05em;
   text-align: center;
+  padding-bottom: 100px; 
+  padding-right: 20px;
+
 }
 
 .Connect-Content-Dock {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 60px; 
-  pointer-events: auto; 
-  transform: scale(1.4); 
-  transform-origin: top center;
-}
-
-.glass-dock {
-  background: rgba(0, 0, 0, 0.75) !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  backdrop-filter: blur(16px);
+  margin-top: 50px;
+  pointer-events: auto;
+  margin-bottom: 30px;
 }
 
 
-.glass-dock button svg {
-  fill: none !important;
-  stroke: #d6d6d8 !important;
-  stroke-width: 1.5px !important;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  width: 26px !important;
-  height: 26px !important;
-  transition: stroke 0.3s ease;
+.Connect-Content-Dock .dock-outer {
+  position: relative !important;
+  margin: 0 !important;
 }
 
-
-.glass-dock button:hover svg {
-  stroke: #ffffff !important;
+.Connect-Content-Dock .dock-panel {
+  position: relative !important;
+  transform: none !important;
+  left: auto !important;
+  bottom: auto !important;
 }
 
 @media (max-width: 768px) {
@@ -142,9 +138,11 @@
   .Connect-Content-TitleA {
     margin-bottom: 15px;
   }
-  
+
   .Connect-Content-Dock {
-    margin-top: 25px; 
-    transform: scale(0.9); 
+    margin-top: 30px; 
+    transform: scale(0.85); 
+    transform-origin: top center;
   }
+  
 }
