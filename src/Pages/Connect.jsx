@@ -11,10 +11,24 @@ import AnimatedContent from "../components/AnimatedContent";
 import FoldText from "../components/FoldText";
 import BottomUpLetters from "../components/BottumUpLetters";
 import Dock from "../components/Dock";
-import TypingKeyboard from "../components/TypingKeyboard";
+import SpecularButton from "../components/SpecularButton";
 
 
 function Connect(){
+
+    const GenAIMLResume = () => {
+        const link = document.createElement('a');
+        link.href = '/Srikar_Resume_AIML.pdf';
+        link.download = 'SRIKAR_AIML_Engineer_Resume.pdf';
+        link.click();
+    };
+
+    const SDEResume = () => {
+        const link = document.createElement('a');
+        link.href = '/Srikar_Resume_SDE.pdf';
+        link.download = 'SRIKAR_SDE_Resume.pdf';
+        link.click();
+    };
 
     const items = [
     { icon: <Icons.VscMail size={18} />, label: 'Mail', onClick: () => window.open('mailto:ksaisrikaryerraguntla9@gmail.com', '_blank') },
@@ -88,7 +102,7 @@ function Connect(){
                 <div className="Connect-Content-Text">
                     <div className="Connect-Content-TitleA">
                         <FoldText
-                            text="Story time is over !"
+                            text="Spotlight's On You Now !"
                             splitBy="char"
                             hinge="top"
                             trigger="scroll"
@@ -107,6 +121,18 @@ function Connect(){
                             Collaboration time? Let's connect.
                         </BottomUpLetters>
                     </div>
+                    <AnimatedContent
+                            distance={50}
+                            direction="horizontal"
+                            reverse={false}
+                            duration={2.2}
+                            ease="power3.out"
+                            initialOpacity={0}
+                            animateOpacity
+                            scale={1}
+                            threshold={0.1}
+                            delay={0.65}
+                        >
                     <div className="Connect-Content-Dock">
                         <Dock 
                             items={items}
@@ -115,6 +141,84 @@ function Connect(){
                             magnification={70}
                         />
                     </div>
+                    </AnimatedContent>
+                    <div className="Connect-Content-Resume-Headline">
+                        <FoldText
+                            text="⌁ Full Story in One File ⌁"
+                            splitBy="char"
+                            hinge="top"
+                            trigger="scroll"
+                            duration={0.95}
+                            stagger={0.045}
+                            ease="power3.out"
+                            perspective={700}
+                            creaseShading={0.55}
+                            fontSize={70}
+                            fontWeight={650}
+                            color="#e6ebeb"
+                        />
+                    </div>
+                    <AnimatedContent
+                            distance={50}
+                            direction="vertical"
+                            reverse={false}
+                            duration={2}
+                            ease="power3.out"
+                            initialOpacity={0}
+                            animateOpacity
+                            scale={1}
+                            threshold={0.1}
+                            delay={0.65}
+                        >
+                        <div className="Connect-Content-Resume-Buttons">
+                            <div className="Connect-Content-Resume-Button1">
+                                <SpecularButton
+                                    size="lg"
+                                    radius={18}
+                                    tint="#ffffff"
+                                    tintOpacity={0}
+                                    blur={0}
+                                    textColor="#f5f5f5"
+                                    lineColor="#ffffff"
+                                    baseColor="#525252"
+                                    intensity={1}
+                                    shineSize={10}
+                                    shineFade={40}
+                                    thickness={1}
+                                    speed={0.35}
+                                    followMouse
+                                    proximity={250}
+                                    autoAnimate={false}
+                                    onClick={GenAIMLResume}
+                                >
+                                    GenAI & ML Specialist
+                                </SpecularButton>
+                            </div>
+                            <div className="Connect-Content-Resume-Button2">
+                                <SpecularButton
+                                    size="lg"
+                                    radius={18}
+                                    tint="#ffffff"
+                                    tintOpacity={0}
+                                    blur={0}
+                                    textColor="#f5f5f5"
+                                    lineColor="#ffffff"
+                                    baseColor="#525252"
+                                    intensity={1}
+                                    shineSize={10}
+                                    shineFade={40}
+                                    thickness={1}
+                                    speed={0.35}
+                                    followMouse
+                                    proximity={250}
+                                    autoAnimate={false}
+                                    onClick={SDEResume}
+                                >
+                                    Software Engineer
+                                </SpecularButton>
+                            </div>
+                        </div>
+                    </AnimatedContent>
                 </div>
             </section>
         </section>

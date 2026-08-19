@@ -50,8 +50,8 @@
 .Connect-Content-Image {
   position: relative;
   width: 100%;
-  max-width: 420px; 
-  height: 60vh; 
+  max-width: 450px; 
+  height: 65vh; 
   border-radius: 20px;
   overflow: hidden; 
   background: transparent;
@@ -75,7 +75,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px; 
+  margin-bottom: 30px; 
 }
 
 .Connect-Content-TitleB {
@@ -88,7 +88,7 @@
   color: #d6d6d8;
   letter-spacing: 0.05em;
   text-align: center;
-  padding-bottom: 33px; 
+  padding-bottom: 30px; 
 }
 
 .Connect-Content-Dock {
@@ -98,7 +98,6 @@
   margin-top: 10px;
   pointer-events: auto;
 }
-
 
 .Connect-Content-Dock .dock-outer {
   position: relative !important;
@@ -112,34 +111,74 @@
   bottom: auto !important;
 }
 
+.Connect-Content-Resume-Headline {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 145px; 
+  white-space: nowrap; 
+}
+
+.Connect-Content-Resume-Buttons {
+  display: flex;
+  flex-direction: row; 
+  justify-content: center;
+  align-items: center;
+  gap: 30px; 
+  margin-top: 30px;
+  width: 100%;
+}
+
+.Connect-Content-Resume-Buttons .specular-button {
+  font-family: 'Iceland', cursive;
+  font-size: 1.5rem; 
+  letter-spacing: 0.05em;
+  background: #000000;
+}
+
 @media (max-width: 768px) {
   .Connect-Content {
     flex-direction: column; 
     justify-content: center;
     align-items: center;
-    padding-top: 10vh;
-    gap: 40px; 
+    padding: 10vh 5% 5vh 5%; 
+    gap: 30px; 
   }
 
   .Connect-Content-Image {
-    max-width: 90%; 
-    height: 45vh; 
+    max-width: 100%; 
+    height: 40vh; 
+    margin-top: 0; 
   }
 
   .Connect-Content-Text {
     width: 100%;
-    transform: translateY(0); 
     margin-left: 0; 
+    margin-top: 0; 
   }
 
   .Connect-Content-TitleA {
     margin-bottom: 15px;
   }
+  
+  .Connect-Content-TitleB {
+    font-size: clamp(1.5rem, 5vw, 2rem); 
+    padding-bottom: 25px;
+  }
 
   .Connect-Content-Dock {
-    margin-top: 30px; 
-    transform: scale(0.85); 
-    transform-origin: top center;
+    margin-top: 20px; 
+    transform: scale(0.95); 
+    transform-origin: center center;
   }
-  
+  .Connect-Content-Resume-Headline {
+    padding-right: 0; 
+    margin-top: 25px;
+  }
+
+  .Connect-Content-Resume-Buttons {
+    flex-direction: column; 
+    gap: 20px;
+  }
+
 }
