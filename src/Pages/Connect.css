@@ -42,31 +42,32 @@
   display: flex;
   flex-direction: row; 
   justify-content: flex-start; 
-  align-items: center;
-  padding: 0 5%;
+  align-items: flex-start;
+  padding: 8vh 5% 0 5%; 
   gap: 10%; 
 }
 
 .Connect-Content-Image {
   position: relative;
   width: 100%;
-  max-width: 400px; 
+  max-width: 420px; 
   height: 60vh; 
   border-radius: 20px;
   overflow: hidden; 
   background: transparent;
+  margin-top: 8vh; 
 }
 
 
 .Connect-Content-Text {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 50%; 
   transform: translateY(0); 
-  margin-left: 8%;
-  padding-bottom: 0;
+  margin-left: 12%; 
+  margin-top: 3vh; 
 }
 
 .Connect-Content-TitleA {
@@ -74,8 +75,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
-  padding-right: 20px;
+  margin-bottom: 20px; 
 }
 
 .Connect-Content-TitleB {
@@ -84,22 +84,19 @@
   display: flex;
   justify-content: center;
   font-family: 'Iceland', cursive; 
-  font-size: clamp(2rem, 3.2vw, 2.5rem); 
+  font-size: clamp(2rem, 3vw, 2.3rem); 
   color: #d6d6d8;
   letter-spacing: 0.05em;
   text-align: center;
-  padding-bottom: 100px; 
-  padding-right: 20px;
-
+  padding-bottom: 33px; 
 }
 
 .Connect-Content-Dock {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 10px;
   pointer-events: auto;
-  margin-bottom: 30px;
 }
 
 

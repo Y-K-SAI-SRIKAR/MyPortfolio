@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import Lenis from 'lenis';
 import './Connect.css';
-import { useNavigate } from 'react-router-dom';
 import * as Icons from 'react-icons/vsc';
 import * as IC from 'react-icons/fa';
+import * as SI from 'react-icons/si'
 import Img from '../assets/9.jpg'
 import PixelSnow from "../components/PixelSnow";
 import DitherReveal from "../components/DitherReveal";
@@ -11,17 +11,19 @@ import AnimatedContent from "../components/AnimatedContent";
 import FoldText from "../components/FoldText";
 import BottomUpLetters from "../components/BottumUpLetters";
 import Dock from "../components/Dock";
+import TypingKeyboard from "../components/TypingKeyboard";
 
 
 function Connect(){
 
     const items = [
-    { icon: <Icons.VscMail size={18} />, label: 'Mail', onClick: () => window.location.href='/your-href-path' },
-    { icon: <IC.FaLinkedin size={18} />, label: 'LinkedIn', onClick: () => window.location.href='/your-href-path' },
-    { icon: <Icons.VscGithub size={18} />, label: 'GitHub', onClick: () =>window.location.href='/your-href-path' },
-    { icon: <IC.FaDocker size={18} />, label: 'DockerHub', onClick: () => window.location.href='/your-href-path' },
-    { icon: <IC.FaInstagram size={18} />, label: 'Instagram', onClick: () => window.location.href='instagram.com/nexvitals' },
-    { icon: <IC.FaBlogger size={18} />, label: 'Blog', onClick: () => window.location.href='/your-href-path'}
+    { icon: <Icons.VscMail size={18} />, label: 'Mail', onClick: () => window.open('mailto:ksaisrikaryerraguntla9@gmail.com', '_blank') },
+    { icon: <IC.FaLinkedin size={18} />, label: 'LinkedIn', onClick: () => window.open('https://www.linkedin.com/in/y-k-sai-srikar/', '_blank') },
+    { icon: <Icons.VscGithub size={18} />, label: 'GitHub', onClick: () =>window.open('https://github.com/Y-K-SAI-SRIKAR', '_blank') },
+    { icon: <SI.SiCodechef size={18} />, label: 'CodeChef', onClick: () => window.open('https://www.codechef.com/users/kl2400080069', '_blank') },
+    { icon: <SI.SiLeetcode size={18} />, label: 'LeetCode', onClick: () => window.open('https://leetcode.com/u/KL2400080069/', '_blank') },
+    { icon: <IC.FaHackerrank size={18} />, label: 'HackerRank', onClick: () => window.open('https://www.hackerrank.com/profile/KL2400080069', '_blank') },
+    { icon: <IC.FaInstagram size={18} />, label: 'Instagram', onClick: () => window.open('https://instagram.com/shinazugawa_.22._', '_blank') }
   ];
 
     useEffect(() => {
