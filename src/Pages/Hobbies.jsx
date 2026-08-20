@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 import Lenis from 'lenis';
 import './Hobbies.css';
+import Img1 from '../assets/a.jpg';
+import Img2 from '../assets/b.jpg';
+import Img3 from '../assets/c.jpg';
+import Img4 from '../assets/d.jpg';
+import Img5 from '../assets/e.jpg';
+import Img6 from '../assets/f.jpg';
 import Silk from '../components/Silk';
 import FoldText from "../components/FoldText";
 import ScrollRevealParagraph from "../components/ScrollRevealParagraph";
@@ -8,55 +14,63 @@ import CoverflowCarousel from "../components/CoverflowCarousel";
 import AnimatedContent from "../components/AnimatedContent";
 
 function Hobbies(){
-
     const Para = `Photography: Where I'm learning to see the world through a different lens.
     Imperfectly. Passionately. Honestly. Not every frame is gallery-worthy. 
     But every frame is real. I chase moments, not perfection. Stories, not settings.
     The blurry shots, the overexposed skies, the unexpected angles they're all part of my journey. 
-    And I love this beautifully imperfect process.`
+    And I love this beautifully imperfect process. Here are some of my Works :`
 
     const SLIDES = [
   {
-    src: "",
-    title: "Tidewater",
+    src: Img1,
+    title: "Painted Sky",
     meta: [
-      { label: "Year", value: "2019" },
-      { label: "Place", value: "Ada Ferrow" },
+      { label: "Year", value: "2023" },
+      { label: "Place", value: "Vizag" },
     ],
   },
   {
-    src: "",
-    title: "Nightshift",
+    src: Img2,
+    title: "Mounted !",
     meta: [
-      { label: "Year", value: "2021" },
-      { label: "Place", value: "Kell Mora" },
+      { label: "Year", value: "2024" },
+      { label: "Place", value: "Vizag" },
     ],
   },
   {
-    src: "",
-    title: "Overexposed",
+    src: Img3,
+    title: "Dreamy Sky",
     meta: [
-      { label: "Year", value: "2018" },
-      { label: "Place", value: "Juno Vale" },
+      { label: "Year", value: "2024" },
+      { label: "Place", value: "Rajahmundry" },
     ],
   },
   {
-    src: "",
-    title: "Slow Bloom",
+    src: Img4,
+    title: "Mistic Mornings",
     meta: [
-      { label: "Year", value: "2022" },
-      { label: "Place", value: "Rue Alcott" },
+      { label: "Year", value: "2025" },
+      { label: "Place", value: "KLU" },
     ],
   },
   {
-    src: "",
-    title: "Low Country",
+    src: Img5,
+    title: "Sea Breeze",
 
     meta: [
-      { label: "Year", value: "2017" },
-      { label: "Place", value: "Sim Oyo" },
+      { label: "Year", value: "2026" },
+      { label: "Place", value: "Vizag" },
     ],
   },
+  {
+    src: Img6,
+    title: "Good Morning !",
+
+    meta: [
+      { label: "Year", value: "2022" },
+      { label: "Place", value: "Rajahmundry" },
+    ],
+  }
 ];
 
     useEffect(() => {
