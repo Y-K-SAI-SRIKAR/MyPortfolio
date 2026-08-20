@@ -68,11 +68,35 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .Hobbies-Content-title .fold-text {
   font-family: 'Iceland', cursive;
+}
+
+.Hobbies-Content-Body {
+  width: 100%;
+}
+
+.Hobbies-Content-Ph-Intro {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto 5rem auto; 
+}
+
+.Hobbies-Content-Ph-Carousel {
+  width: 100%;
+  font-family: 'Iceland', cursive;
+}
+
+.Hobbies-Content-Ph-Carousel dl {
+  font-size: 20px !important; 
+  max-width: 300px !important; 
+}
+
+.Hobbies-Content-Ph-Carousel p:first-of-type {
+  font-size: 22px !important;
 }
 
 @media (max-width: 768px) {
