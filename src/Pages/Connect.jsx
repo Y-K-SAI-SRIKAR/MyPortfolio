@@ -12,6 +12,7 @@ import FoldText from "../components/FoldText";
 import BottomUpLetters from "../components/BottumUpLetters";
 import Dock from "../components/Dock";
 import SpecularButton from "../components/SpecularButton";
+import TextPath from "../components/TextPath";
 
 
 function Connect(){
@@ -96,6 +97,7 @@ function Connect(){
                     <DitherReveal
                         image = {Img}
                         focusY = {13}
+                        revealRadius = {100}
                     />
                 </div>
                 </AnimatedContent>
@@ -221,6 +223,9 @@ function Connect(){
                     </AnimatedContent>
                 </div>
             </section>
+            <div className="Connect-Footer">
+                <TextPath/>
+            </div>
         </section>
     )
 }
