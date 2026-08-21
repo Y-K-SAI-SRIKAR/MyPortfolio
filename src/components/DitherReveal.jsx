@@ -15,7 +15,7 @@ const DEFAULTS = {
   focusY: 50,
   ditherStyle: "bayer8",
   dotSize: 5,
-  revealRadius: 100,
+  revealRadius: 80,
   revealSoftness: 50,
   wave: true,
   waveSpeed: 82,

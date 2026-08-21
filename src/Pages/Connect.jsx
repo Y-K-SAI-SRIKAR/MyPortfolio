@@ -144,7 +144,7 @@ function Connect(){
                     </AnimatedContent>
                     <div className="Connect-Content-Resume-Headline">
                         <FoldText
-                            text="⌁ Full Story in One File ⌁"
+                            text="Full Story in One File"
                             splitBy="char"
                             hinge="top"
                             trigger="scroll"

@@ -109,8 +109,22 @@
     margin-bottom: 1.5rem;
   }
 
+  .Hobbies-Content-Title .fold-text,
   .Hobbies-Content-title .fold-text {
     font-size: clamp(2.5rem, 8vw, 4.75rem) !important; 
     line-height: 1.1;
+  }
+
+  .Hobbies-Content-Ph-Intro {
+    margin: 0 auto 3rem auto; 
+  }
+
+  .Hobbies-Content-Ph-Carousel dl {
+    font-size: 16px !important; 
+    max-width: 100% !important; 
+  }
+
+  .Hobbies-Content-Ph-Carousel p:first-of-type {
+    font-size: 18px !important; 
   }
 }

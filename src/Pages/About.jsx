@@ -24,9 +24,7 @@ function About(){
     creative problem-solving, and deep understanding of how modern LLMs and transformer architectures reason and adapt.
     I don't just build systems, I ask why they work, then channel that understanding into production. 
     Whether architecting scalable backends, deploying NLP-powered inference at scale, or designing GenAI pipelines. 
-    I'm driven by work that transforms theory into tangible impact.
-    Beyond code, I explore discipline, and vedic philosophy to understand decision-making and resilience. 
-    Gardening and music keep me grounded.`;
+    I'm driven by work that transforms theory into tangible impact.`;
 
     const ExpPara = `While I lack formal corporate experience, I've pursued hands-on GenAI and ML work through multiple project initiatives. 
     I've built ML pipelines, optimized LLM-powered services for production, and deployed real-time AI systems at scale. 
