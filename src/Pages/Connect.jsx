@@ -196,29 +196,6 @@ function Connect(){
                                     GenAI & ML Specialist
                                 </SpecularButton>
                             </div>
-                            <div className="Connect-Content-Resume-Button2">
-                                <SpecularButton
-                                    size="lg"
-                                    radius={18}
-                                    tint="#ffffff"
-                                    tintOpacity={0}
-                                    blur={0}
-                                    textColor="#f5f5f5"
-                                    lineColor="#ffffff"
-                                    baseColor="#525252"
-                                    intensity={1}
-                                    shineSize={10}
-                                    shineFade={40}
-                                    thickness={1}
-                                    speed={0.35}
-                                    followMouse
-                                    proximity={250}
-                                    autoAnimate={false}
-                                    onClick={SDEResume}
-                                >
-                                    Software Engineer
-                                </SpecularButton>
-                            </div>
                         </div>
                     </AnimatedContent>
                 </div>
