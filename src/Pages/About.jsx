@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Lenis from "lenis";
 import './About.css'
-import  myImg from "../assets/5.jpg" ;
+import  myImg from "../assets/11.jpg" ;
 import Silk from "../components/Silk"
 import FoldText from "../components/FoldText";
 import ScrollRevealParagraph from "../components/ScrollRevealParagraph";

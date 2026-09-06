@@ -39,7 +39,6 @@ function App() {
     touchMultiplier: 1,
   });
 
-  // Expose Lenis globally
   window.lenis = lenis;
 
   let rafId;
@@ -54,7 +53,7 @@ function App() {
   return () => {
     cancelAnimationFrame(rafId);
     lenis.destroy();
-    delete window.lenis; // Clean up on unmount
+    delete window.lenis; 
   };
   }, []);
 
@@ -90,7 +89,7 @@ function App() {
             <div className="Intro-about">
               <span className="Intro-about__prefix">I am a</span>
               <RotatingText
-                texts={['Machine Learning Engineer','Gen AI Specialist','Backend Developer','Problem Solver']}
+                texts={['Machine Learning Engineer','Gen AI Specialist','Backend Developer','Problem Solver', "Innovator"]}
                 mainClassName="rotating-tag"
                 staggerFrom="last"
                 initial={{ y: "100%" }}
