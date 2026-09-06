@@ -76,7 +76,7 @@ function App() {
         <div className="App-content">
           <div className = "Intro-content">
             <TextType
-              text={["> init. Srikar Yerraguntla : Software Engineer","Welcome to my corner of the internet.","I build things that think"]}
+              text={["> init. Srikar Yerraguntla : Gen & Agentic AI Engineer","Welcome to my corner of the internet.","I build things that think"]}
               typingSpeed={45}
               pauseDuration={2000}
               showCursor={true}
