@@ -75,6 +75,39 @@
   font-family: 'Iceland', cursive;
 }
 
+.ExtraCurr-Content-Body-Acc {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 3% !important; 
+}
+
+.ExtraCurr-Content-Body-Acc .text-3xl, 
+.ExtraCurr-Content-Body-Acc .text-xs {
+    color: rgba(255, 255, 255, 0.3) !important;
+    transition: color 0.2s ease-in-out;
+}
+
+.ExtraCurr-Content-Body-Acc [data-state="open"] .text-3xl,
+.ExtraCurr-Content-Body-Acc [data-state="open"] .text-xs,
+.ExtraCurr-Content-Body-Acc [data-state="open"] h1 {
+    color: #ffffff !important;
+}
+
+.ExtraCurr-Content-Body-Acc .text-muted-foreground {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-family: 'Iceland', cursive !important;
+    font-size: 1.5rem !important; 
+    line-height: 1.5 !important;
+}
+
+.ExtraCurr-Content-Body, 
+.ExtraCurr-Content-Body-Acc {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
 @media (max-width: 768px) {
   .ExtraCurr-Content {
     padding: 60px 16px;
@@ -88,5 +121,9 @@
   .ExtraCurr-title .fold-text {
     font-size: clamp(2.5rem, 8vw, 4.75rem) !important; 
     line-height: 1.1;
+  }
+
+  .ExtraCurr-Content-Body-Acc {
+    padding-left: 5% !important; 
   }
 }
