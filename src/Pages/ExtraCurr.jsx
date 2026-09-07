@@ -3,6 +3,7 @@ import Lenis from 'lenis';
 import './ExtraCurr.css';
 import Silk from '../components/Silk';
 import FoldText from "../components/FoldText";
+import { Accordion05 } from "../components/Accordion";
 
 function ExtraCurr(){
 
@@ -56,6 +57,9 @@ function ExtraCurr(){
                     />
                 </div>
                 <div className="ExtraCurr-Content-Body">
+                    <div className="ExtraCurr-Content-Body-Acc">
+                        <Accordion05 />
+                    </div>
                 </div>
             </section>
         </section>
