@@ -19,15 +19,8 @@ function Connect(){
 
     const GenAIMLResume = () => {
         const link = document.createElement('a');
-        link.href = '/Srikar_Resume_AIML.pdf';
+        link.href = './Srikar_Resume_AI&ML_Engineer.pdf';
         link.download = 'SRIKAR_AIML_Engineer_Resume.pdf';
-        link.click();
-    };
-
-    const SDEResume = () => {
-        const link = document.createElement('a');
-        link.href = '/Srikar_Resume_SDE.pdf';
-        link.download = 'SRIKAR_SDE_Resume.pdf';
         link.click();
     };
 
