@@ -4,6 +4,7 @@ import './ExtraCurr.css';
 import Silk from '../components/Silk';
 import FoldText from "../components/FoldText";
 import { Accordion05 } from "../components/Accordion";
+import DotMatrixText from "../components/DotText";
 
 function ExtraCurr(){
 
@@ -59,6 +60,21 @@ function ExtraCurr(){
                 <div className="ExtraCurr-Content-Body">
                     <div className="ExtraCurr-Content-Body-Acc">
                         <Accordion05 />
+                    </div>
+                    <div className="ExtraCurr-Content-Body-Quote">
+                        <div className="relative z-10 w-full max-w-5xl px-6 h-56 md:h-80 flex items-center justify-center">
+                            <DotMatrixText
+                                text={["Conduct", "Compose","Empower"]}
+                                transition="fade"
+                                cycleInterval={3000}
+                                dotSize={2.5}
+                                gap={2.5}
+                                activeColor="#ffffff"
+                                inactiveColor="rgba(255, 255, 255, 0.04)"
+                                showInactive={true}
+                                className="w-full h-full drop-shadow-[0_0_25px_rgba(255,255,255,0.4)]"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
