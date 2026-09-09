@@ -55,7 +55,7 @@ const LineSidebar = ({
   // frame-rate independent exponential smoothing, so color, shift and scale
   // all move together without staggering CSS transitions.
   const runFrame = useCallback(now => {
-    const dt = Math.min((now - lastRef.current) / 1000, 0.05);
+    const dt = Math.max(0, Math.min((now - lastRef.current) / 1000, 0.05));
     lastRef.current = now;
     const tau = Math.max(smoothingRef.current, 1) / 1000;
     const k = 1 - Math.exp(-dt / tau);
@@ -79,12 +79,10 @@ const LineSidebar = ({
   }, []);
 
   const startLoop = useCallback(() => {
-    if (rafRef.current != null) {
-      cancelAnimationFrame(rafRef.current);
+    if (rafRef.current === null) {
+      lastRef.current = performance.now();
+      rafRef.current = requestAnimationFrame(runFrame);
     }
-
-    lastRef.current = performance.now();
-    rafRef.current = requestAnimationFrame(runFrame);
   }, [runFrame]);
 
   const handlePointerMove = useCallback(
