@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "./Achieve.css";
 import Lenis from "lenis";
 import { FaAws } from 'react-icons/fa';
+import { FaMedal } from "react-icons/fa";
 import Silk from "../components/Silk";
 import FoldText from "../components/FoldText";
 import BorderGlow from "../components/BorderGlow";
@@ -81,14 +82,14 @@ function Achieve() {
                 >
                 <div className="Achieve-Cards-Container">
                     <BorderGlow
-                        edgeSensitivity={30}
+                        edgeSensitivity={10}
                         glowColor="40 80 80"
                         backgroundColor="#120F17"
                         borderRadius={28}
-                        glowRadius={40}
-                        glowIntensity={1}
-                        coneSpread={25}
-                        animated
+                        glowRadius={80}
+                        glowIntensity={2}
+                        coneSpread={45}
+                        animated={true}
                         colors={['#c084fc', '#f472b6', '#38bdf8']}
                         >
                         <CardCurtainReveal className="UG-Card">
@@ -110,51 +111,56 @@ function Achieve() {
                                     </CardCurtainRevealTitle>
                                     <CardCurtainRevealDescription className="B-Tech-Desc">
                                         <p>
-                                            Achieved 1000/1000 - Perfect Score. Mastered AWS fundamentals with 
-                                            deep expertise in cloud infrastructure and architecture. Ready to 
-                                            build production-grade systems.
+                                          Achieved 1000/1000 - Perfect Score. Mastered AWS fundamentals with 
+                                          deep expertise in cloud infrastructure and architecture. Ready to 
+                                          build production-grade systems.
                                         </p>
                                     </CardCurtainRevealDescription>
                                     <CardCurtain className="B-Tech" />
-                                </div>  {/* ← ADD THIS CLOSING DIV */}
+                                </div>  
                             </CardCurtainRevealBody>
                             <CardCurtainRevealFooter className="mt-auto">
-                                <div className="B-Tech-College">
-                                    <h3>@ AWS Cloud Practitioner</h3>
-                                </div>
                             </CardCurtainRevealFooter>
                         </CardCurtainReveal>
                     </BorderGlow>
                     <BorderGlow
-                        edgeSensitivity={30}
+                        edgeSensitivity={10}
                         glowColor="40 80 80"
                         backgroundColor="#120F17"
                         borderRadius={28}
-                        glowRadius={40}
-                        glowIntensity={1}
-                        coneSpread={25}
-                        animated
+                        glowRadius={80}
+                        glowIntensity={2}
+                        coneSpread={45}
+                        animated={true}
                         colors={['#c084fc', '#f472b6', '#38bdf8']}
                         >
                         <CardCurtainReveal className="SSC-card">
                             <CardCurtainRevealBody className="SSC">
-                                <CardCurtainRevealTitle className="Tenth-card">
-                                    School Silver Medalist
-                                    <span className="hover-me-text">(Hover Me)</span>
-                                </CardCurtainRevealTitle>
-                                <CardCurtainRevealDescription className="Tenth-Desc">
-                                    <p>
-                                        Silver Medal in SSC Public Exams.
-                                        Perseverance, strategic learning, and a commitment to excellence
-                                        that shaped me into the innovator I am today.
-                                    </p>
-                                </CardCurtainRevealDescription>
-                                <CardCurtain className="Tenth" />
+                                <div style={{ position: 'relative' }}>
+                                    <FaMedal style={{ 
+                                        position: 'absolute', 
+                                        right: '20px', 
+                                        top: '20px', 
+                                        fontSize: '4rem',
+                                        opacity: 0.7,             
+                                        color: 'rgba(255,255,255,0.8)' 
+                                    }} />
+                                    <CardCurtainRevealTitle className="Tenth-card">
+                                        School Silver Medalist
+                                        <span className="hover-me-text">(Hover Me)</span>
+                                    </CardCurtainRevealTitle>
+                                    <CardCurtainRevealDescription className="Tenth-Desc">
+                                        <p>
+                                          Silver Medal in SSC Public Exams.
+                                          Beyond the achievement,
+                                          this milestone represents perseverance, strategic learning, and a deep
+                                          commitment to excellence that shaped me into the innovator I am today.
+                                        </p>
+                                    </CardCurtainRevealDescription>
+                                    <CardCurtain className="Tenth" />
+                                </div>
                             </CardCurtainRevealBody>
                             <CardCurtainRevealFooter className="mt-auto">
-                                <div className="SSC-School">
-                                    <h3>@ Jun 9 2024</h3>
-                                </div>
                             </CardCurtainRevealFooter>
                         </CardCurtainReveal>
                     </BorderGlow>
