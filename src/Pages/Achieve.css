@@ -75,6 +75,30 @@
   font-family: 'Iceland', cursive;
 }
 
+.card-A {
+  width: 380px !important;
+  height: 510px !important;
+  flex-shrink: 0;
+}
+
+.Achieve-Content-Body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  min-height: 600px;
+}
+
+.Achieve-Content-Body-Cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 32px; 
+  flex-wrap: wrap; 
+}
+
 @media (max-width: 768px) {
   .Achieve-Content {
     padding: 60px 16px;
