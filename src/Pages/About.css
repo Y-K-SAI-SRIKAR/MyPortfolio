@@ -232,73 +232,214 @@
 }
 
 @media (max-width: 768px) {
-  .About-Content {
-    padding: 60px 16px;
-    justify-content: flex-start;
-    padding-top: 15vh;
-  }
+    .About-Content {
+        width: 100%;
+        min-height: 100vh;
+        padding: 70px 20px 60px;
+        justify-content: flex-start;
+    }
 
-  .About-Content-title {
-    margin-bottom: 1.5rem;
-  }
+    .About-Content-title {
+        width: 100%;
+        margin-bottom: 2.5rem;
+        padding: 0 5px;
+    }
 
-  .About-Content-title .fold-text {
-    font-size: clamp(2.5rem, 8vw, 4.75rem) !important; 
-    line-height: 1.1;
-  }
+    .About-Content-title .fold-text {
+        font-size: clamp(2.0rem, 7vw, 3rem) !important;
+        line-height: 1.05;
+        word-break: normal;
+        overflow-wrap: normal;
+    }
 
-  .About-Content-Body {
-    flex-direction: column;
-    margin-top: 5vh;
-    gap: 40px;
-  }
+    .About-Content-Body {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 45px;
+        margin-top: 2vh;
+    }
 
-  .About-Content-Intro {
-    margin-top: 0;
-    padding: 0 10px;
-    max-width: 100%;
-  }
+    .About-Content-Intro {
+        width: 100%;
+        max-width: 620px;
+        margin: 0;
+        padding: 0 4px;
+        text-align: left;
+    }
 
-  .About-content-Image {
-    width: 100%;
-    max-width: 350px; 
-    height: 450px;
-  }
+    .scroll-reveal-p {
+        width: 100%;
+        display: block;
+        font-size: clamp(1.15rem, 4.8vw, 1.4rem);
+        line-height: 1.55;
+        letter-spacing: 0;
+        text-align: left;
+        word-spacing: normal;
+    }
 
-  .scroll-reveal-p {
-    gap: 0.2em 0.3em;
-    font-size: 1.4rem; 
-    line-height: 1.4;
-  }
+    .scroll-reveal-word {
+        display: inline;
+    }
 
-  .About-Content-Footer {
-    margin-top: 10vh; 
-  }
+    .scroll-reveal-word .word-bg,
+    .scroll-reveal-word .word-fg {
+        display: inline;
+    }
 
-  .About-Content-Footer-Education {
-    font-size: clamp(2.5rem, 8vw, 3.5rem); 
-  }
+    .About-content-Image {
+        width: 100%;
+        max-width: 330px;
+        height: 430px;
+        margin: 10px auto 0;
+        border-radius: 20px;
+    }
 
-  .Education-Cards-Container {
-    flex-direction: column; 
-    gap: 30px;
-    margin-top: 4vh;
-  }
+    .About-Content-Footer {
+        width: 100%;
+        margin-top: 9vh;
+    }
 
-  .Education-Cards-Container > div {
-    width: 100%;
-    max-width: 340px; 
-    height: 320px; 
-  }
+    .About-Content-Footer-Education {
+        width: 100%;
+        padding: 0 5px;
+        font-size: clamp(2.3rem, 9vw, 3.5rem);
+        line-height: 1.1;
+    }
 
-  .About-Content-Footer-Experience {
-    font-size: clamp(2.5rem, 8vw, 3.5rem); 
-    margin-top: 10vh;
-  }
+    .Education-Cards-Container {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+        margin-top: 6vh;
+    }
 
-  .Experience-Text {
-    max-width: 100%;
-    padding: 0 10px;
-    margin-top: 5vh;
-  }
+    .Education-Cards-Container > div {
+        width: 100%;
+        max-width: 340px;
+        height: 320px;
+    }
+
+    .Education-Cards-Container p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        padding: 0 15px;
+    }
+
+    .About-Content-Footer-Experience {
+        width: 100%;
+        padding: 0 5px;
+        margin-top: 10vh;
+        font-size: clamp(2.3rem, 9vw, 3.5rem);
+        line-height: 1.1;
+    }
+
+    .Experience-Text {
+        width: 100%;
+        max-width: 620px;
+        margin-top: 5vh;
+        padding: 0 4px;
+    }
+
+    .Experience-Text .scroll-reveal-p {
+        width: 100%;
+        font-size: clamp(1.15rem, 4.8vw, 1.4rem);
+        line-height: 1.55;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .About-Content {
+        padding: 55px 16px 50px;
+    }
+
+    .About-Content-title {
+        margin-bottom: 2rem;
+    }
+
+    .About-Content-title .fold-text {
+        font-size: clamp(2rem, 7vw, 2.5rem) !important;
+        line-height: 1.05;
+    }
+
+    .About-Content-Body {
+        gap: 35px;
+        margin-top: 1vh;
+    }
+
+    .About-Content-Intro {
+        padding: 0 2px;
+    }
+
+    .scroll-reveal-p {
+        font-size: clamp(1.05rem, 4.5vw, 1.25rem);
+        line-height: 1.55;
+    }
+
+    .About-content-Image {
+        max-width: 300px;
+        height: 400px;
+    }
+
+    .About-Content-Footer {
+        margin-top: 8vh;
+    }
+
+    .About-Content-Footer-Education {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+    }
+
+    .Education-Cards-Container {
+        gap: 25px;
+        margin-top: 5vh;
+    }
+
+    .Education-Cards-Container > div {
+        max-width: 320px;
+        height: 300px;
+    }
+
+    .Education-Cards-Container p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .About-Content-Footer-Experience {
+        margin-top: 8vh;
+        font-size: clamp(2rem, 9vw, 2.8rem);
+    }
+
+    .Experience-Text {
+        margin-top: 4vh;
+    }
+
+    .Experience-Text .scroll-reveal-p {
+        font-size: clamp(1.05rem, 4.5vw, 1.25rem);
+        line-height: 1.55;
+    }
+}
+
+@media (max-width: 360px) {
+    .About-Content {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .About-Content-title .fold-text {
+        font-size: 1.5rem !important;
+    }
+
+    .scroll-reveal-p,
+    .Experience-Text .scroll-reveal-p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .About-content-Image {
+        max-width: 280px;
+        height: 370px;
+    }
 }

@@ -149,8 +149,82 @@
 
 @media (max-width: 768px) {
   .Achieve-Content {
-    padding: 60px 16px;
-    padding-top: 15vh;
+    width: 100%;
+    min-height: 100vh;
+    padding: 55px 16px 60px;
+    padding-top: 10vh;
+    align-items: center;
+  }
+
+  .Achieve-Content-Title {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+    padding: 0 5px;
+  }
+
+  .Achieve-Content-title .fold-text {
+    font-size: clamp(2.2rem, 10vw, 3rem) !important;
+    line-height: 1.05;
+    text-align: center;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .Achieve-Content-Body {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 1vh;
+  }
+
+  .Achieve-Cards-Container {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+    margin-top: 3vh;
+  }
+
+  .Achieve-Cards-Container > div {
+    width: 100%;
+    max-width: 340px;
+    height: 330px;
+    margin: 0 auto;
+    border-radius: 18px;
+  }
+
+  .Achieve-Cards-Container p {
+    width: 100%;
+    padding: 0 14px;
+    margin-top: 15px;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    text-align: center;
+    text-align-last: center;
+  }
+
+  .Achieve-Cards-Container h2,
+  .Achieve-Cards-Container h3,
+  .Achieve-Cards-Container h4 {
+    width: 100%;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .hover-me-text {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    letter-spacing: 0.8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Achieve-Content {
+    padding: 45px 14px 50px;
+    padding-top: 8vh;
   }
 
   .Achieve-Content-Title {
@@ -158,17 +232,53 @@
   }
 
   .Achieve-Content-title .fold-text {
-    font-size: clamp(2.5rem, 8vw, 4.75rem) !important; 
-    line-height: 1.1;
+    font-size: clamp(2rem, 10vw, 2.7rem) !important;
+    line-height: 1.05;
   }
+
   .Achieve-Cards-Container {
-    flex-direction: column;
-    gap: 40px; 
-    margin-top: 4vh;
+    gap: 28px;
+    margin-top: 2vh;
   }
-  
+
   .Achieve-Cards-Container > div {
-    width: 100%;
-    max-width: 360px; 
+    max-width: 320px;
+    height: 310px;
+    border-radius: 16px;
+  }
+
+  .Achieve-Cards-Container p {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0 10px;
+  }
+
+  .hover-me-text {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .Achieve-Content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .Achieve-Content-title .fold-text {
+    font-size: 1.9rem !important;
+  }
+
+  .Achieve-Cards-Container {
+    gap: 25px;
+  }
+
+  .Achieve-Cards-Container > div {
+    max-width: 290px;
+    height: 300px;
+  }
+
+  .Achieve-Cards-Container p {
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 }
