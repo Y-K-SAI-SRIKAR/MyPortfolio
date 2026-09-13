@@ -152,48 +152,188 @@
 }
 
 @media (max-width: 768px) {
+  .Connect {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
   .Connect-Content {
-    flex-direction: column; 
-    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    padding: 10vh 5% 5vh 5%; 
-    gap: 30px; 
+    padding: 50px 16px 40px;
+    gap: 30px;
   }
 
   .Connect-Content-Image {
-    max-width: 100%; 
-    height: 40vh; 
-    margin-top: 0; 
+    width: 100%;
+    max-width: 340px;
+    height: 380px;
+    margin-top: 0;
+    border-radius: 18px;
   }
 
   .Connect-Content-Text {
     width: 100%;
-    margin-left: 0; 
-    margin-top: 0; 
+    max-width: 600px;
+    margin: 0;
+    align-items: center;
   }
 
   .Connect-Content-TitleA {
-    margin-bottom: 15px;
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 0 5px;
+    text-align: center;
   }
-  
+
+  .Connect-Content-TitleA .fold-text {
+    font-size: clamp(2.1rem, 10vw, 3rem) !important;
+    line-height: 1.05;
+    text-align: center;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
   .Connect-Content-TitleB {
-    font-size: clamp(1.5rem, 5vw, 2rem); 
-    padding-bottom: 25px;
+    width: 100%;
+    padding: 0 5px 20px;
+    font-size: clamp(1.25rem, 5vw, 1.7rem);
+    line-height: 1.35;
+    letter-spacing: 0.04em;
+    text-align: center;
   }
 
   .Connect-Content-Dock {
-    margin-top: 20px; 
-    transform: scale(0.95); 
+    width: 100%;
+    margin-top: 10px;
+    transform: scale(0.9);
     transform-origin: center center;
+    overflow: visible;
   }
+
+  .Connect-Content-Dock .dock-outer {
+    width: max-content;
+    max-width: 100%;
+  }
+
+  .Connect-Content-Dock .dock-panel {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
   .Connect-Content-Resume-Headline {
-    padding-right: 0; 
-    margin-top: 25px;
+    width: 100%;
+    margin-top: 60px;
+    padding: 0 5px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .Connect-Content-Resume-Headline .fold-text {
+    font-size: clamp(2rem, 9vw, 2.8rem) !important;
+    line-height: 1.05;
+    text-align: center;
   }
 
   .Connect-Content-Resume-Buttons {
-    flex-direction: column; 
-    gap: 20px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 25px;
+    padding-bottom: 20px;
   }
 
+  .Connect-Content-Resume-Buttons .specular-button {
+    width: 100%;
+    max-width: 280px;
+    font-size: 1.2rem;
+  }
+
+  .Connect-Footer {
+    width: 100%;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Connect-Content {
+    padding: 40px 14px 35px;
+    gap: 25px;
+  }
+
+  .Connect-Content-Image {
+    max-width: 300px;
+    height: 350px;
+  }
+
+  .Connect-Content-TitleA .fold-text {
+    font-size: clamp(2rem, 10vw, 2.7rem) !important;
+  }
+
+  .Connect-Content-TitleB {
+    font-size: 1.15rem;
+    line-height: 1.4;
+    padding-bottom: 15px;
+  }
+
+  .Connect-Content-Dock {
+    transform: scale(0.8);
+    margin-top: 5px;
+  }
+
+  .Connect-Content-Resume-Headline {
+    margin-top: 45px;
+  }
+
+  .Connect-Content-Resume-Headline .fold-text {
+    font-size: clamp(1.9rem, 10vw, 2.6rem) !important;
+  }
+
+  .Connect-Content-Resume-Buttons {
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .Connect-Content-Resume-Buttons .specular-button {
+    max-width: 260px;
+    font-size: 1.1rem;
+  }
+
+  .Connect-Footer {
+    height: 80px;
+  }
+}
+
+@media (max-width: 360px) {
+  .Connect-Content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .Connect-Content-Image {
+    max-width: 280px;
+    height: 330px;
+  }
+
+  .Connect-Content-TitleA .fold-text {
+    font-size: 1.9rem !important;
+  }
+
+  .Connect-Content-TitleB {
+    font-size: 1rem;
+  }
+
+  .Connect-Content-Dock {
+    transform: scale(0.72);
+  }
+
+  .Connect-Content-Resume-Headline .fold-text {
+    font-size: 1.85rem !important;
+  }
 }

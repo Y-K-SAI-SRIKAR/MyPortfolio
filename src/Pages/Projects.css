@@ -258,10 +258,98 @@
 }
 
 @media (max-width: 768px) {
-
   .Projects-Content {
-    padding: 60px 16px;
-    padding-top: 15vh;
+    width: 100%;
+    min-height: 100vh;
+    padding: 55px 16px 60px;
+    padding-top: 10vh;
+    align-items: center;
+  }
+
+  .Projects-Content-Title {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+    padding: 0 5px;
+  }
+
+  .Projects-Content-Title .fold-text {
+    font-size: clamp(2.2rem, 10vw, 3rem) !important;
+    line-height: 1.05;
+    text-align: center;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .Projects-Content-Body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .Projects-Content-Body-Acc {
+    width: 100%;
+    max-width: 600px;
+    min-height: auto;
+    margin-top: 2vh;
+    padding: 0 !important;
+  }
+
+  .Projects-Content-Body-Acc .space-y-3 {
+    width: 100%;
+  }
+
+  .Projects-Content-Body-Acc .space-y-3 > .group {
+    width: 100%;
+    margin-bottom: 14px;
+  }
+
+  .Projects-Content-Body-Acc .space-y-3 > .group > div {
+    width: 100%;
+    min-height: 90px;
+    border-radius: 14px !important;
+    padding: 16px 14px !important;
+  }
+
+  .Projects-Content-Body-Acc .space-y-3 h3 {
+    width: 100%;
+    font-size: 1.25rem !important;
+    line-height: 1.35 !important;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  .Projects-Content-Body-Acc .space-y-3 p {
+    width: 100%;
+    font-size: 0.95rem !important;
+    line-height: 1.45 !important;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  .Projects-Content-Body-Acc .space-y-3 svg {
+    flex-shrink: 0;
+  }
+
+  .Projects-Content-Body-Quote {
+    width: 100%;
+    max-width: 320px;
+    margin-top: 5vh;
+    padding: 0;
+    position: relative;
+    transform: scale(0.8);
+    align-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .Projects-Content {
+    padding: 45px 14px 50px;
+    padding-top: 8vh;
   }
 
   .Projects-Content-Title {
@@ -269,19 +357,65 @@
   }
 
   .Projects-Content-Title .fold-text {
-    font-size: clamp(2.5rem, 8vw, 4.75rem) !important;
-    line-height: 1.1;
+    font-size: clamp(2rem, 10vw, 2.7rem) !important;
+    line-height: 1.05;
+  }
+
+  .Projects-Content-Body-Acc {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 1vh;
+    padding: 0 !important;
+  }
+
+  .Projects-Content-Body-Acc .space-y-3 > .group {
+    margin-bottom: 12px;
   }
 
   .Projects-Content-Body-Acc .space-y-3 > .group > div {
-    min-height: 90px;
+    min-height: 85px;
+    padding: 14px 12px !important;
+    border-radius: 13px !important;
   }
 
   .Projects-Content-Body-Acc .space-y-3 h3 {
-    font-size: 1.5rem !important;
+    font-size: 1.1rem !important;
+    line-height: 1.3 !important;
   }
 
   .Projects-Content-Body-Acc .space-y-3 p {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .Projects-Content-Body-Quote {
+    max-width: 280px;
+    margin-top: 4vh;
+    transform: scale(0.75);
+  }
+}
+
+@media (max-width: 360px) {
+  .Projects-Content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .Projects-Content-Title .fold-text {
+    font-size: 1.9rem !important;
+  }
+
+  .Projects-Content-Body-Acc .space-y-3 > .group > div {
+    min-height: 80px;
+    padding: 12px 10px !important;
+  }
+
+  .Projects-Content-Body-Acc .space-y-3 h3 {
     font-size: 1rem !important;
+  }
+
+  .Projects-Content-Body-Acc .space-y-3 p {
+    font-size: 0.8rem !important;
+    line-height: 1.35 !important;
   }
 }

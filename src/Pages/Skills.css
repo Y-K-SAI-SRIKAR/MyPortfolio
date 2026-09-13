@@ -171,25 +171,158 @@
 
 @media (max-width: 650px) {
     .Skills-Content {
-        padding: 60px 16px;
-        padding-top: 15vh;
+        width: 100%;
+        min-height: 100vh;
+        padding: 55px 16px 60px;
+        align-items: center;
+    }
+
+    .Skills-Content-Title {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+        padding: 0 4px;
+    }
+
+    .Skills-Content-title .fold-text {
+        font-size: clamp(1.5rem, 4vw, 1.5rem) !important;
+        line-height: 1.05;
+        text-align: center;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    .Skills-Content-Body {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 1vh;
     }
 
     .Skills-Cards-Container {
+        width: 100%;
+        max-width: 100%;
+        display: grid;
         grid-template-columns: 1fr;
-        gap: 30px;
-        margin-top: 4vh;
+        gap: 32px;
+        margin-top: 3vh;
+        padding: 0;
     }
 
     .Skills-Cards-Container > div {
+        width: 100%;
+        max-width: 340px;
+        height: 330px;
+        margin: 0 auto;
+        border-radius: 28px;
+    }
+
+    .Skill-Card {
+        width: 100%;
+        height: 100%;
+        border-radius: 28px;
+    }
+
+    .Skill-Card-Body {
+        width: 100%;
+        height: 100%;
+        padding: 25px 18px;
+        border-radius: 28px;
+    }
+
+    .Skill-Card-Title {
+        width: 100%;
+        font-size: 1.35rem;
+        line-height: 1.2;
+        padding: 0 8px;
+    }
+
+    .Skill-Card-Description {
+        width: 100%;
+        padding: 0 5px;
+    }
+
+    .Skill-Card-Description p {
+        margin-top: 15px;
+        padding: 0 10px;
+        font-size: 1.05rem;
+        line-height: 1.65;
+        text-align: center;
+    }
+
+    .hover-me-text {
+        margin-top: 10px;
+        font-size: 0.8rem;
+        letter-spacing: 0.8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Skills-Content {
+        padding: 45px 14px 50px;
+    }
+
+    .Skills-Content-Title {
+        margin-bottom: 1rem;
+    }
+
+    .Skills-Content-title .fold-text {
+        font-size: clamp(1.5rem, 4vw, 1.5rem) !important;
+        line-height: 1.05;
+    }
+
+    .Skills-Cards-Container {
+        gap: 28px;
+        margin-top: 2vh;
+    }
+
+    .Skills-Cards-Container > div {
+        max-width: 320px;
+        height: 310px;
+    }
+
+    .Skill-Card-Body {
+        padding: 22px 14px;
+    }
+
+    .Skill-Card-Title {
+        font-size: 1.25rem;
+    }
+
+    .Skill-Card-Description p {
+        font-size: 1rem;
+        line-height: 1.6;
+        padding: 0 8px;
+    }
+
+    .hover-me-text {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .Skills-Content {
+        padding: 40px 12px 45px;
+    }
+
+    .Skills-Content-title .fold-text {
+        font-size: 1.3rem !important;
+    }
+
+    .Skills-Cards-Container {
+        gap: 25px;
+    }
+
+    .Skills-Cards-Container > div {
+        max-width: 290px;
         height: 300px;
     }
 
     .Skill-Card-Title {
-        font-size: 1.45rem;
+        font-size: 1.15rem;
     }
 
     .Skill-Card-Description p {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
+        line-height: 1.55;
     }
 }
